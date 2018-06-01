@@ -8,8 +8,8 @@
     </h:head>
     <h:body>
         <h:form>
-            <p:link value="Modo Cliente" outcome="cliente"/>
-            <p:link value="Modo Trabajador" outcome="trabajador"/>
+            <p:inputText value="#{clientesController.clientes.nombre}"/>
+            <p:commandButton value="Registrar" actionListener="#{clientesController.registrar()}"/>
         </h:form>
     </h:body>
 </html>
