@@ -10,12 +10,15 @@ C:\Users\riesp\OneDrive\Documentos\NetBeansProjects\software\SoftwareII\software
 C:\Users\riesp\OneDrive\Documentos\NetBeansProjects\software\SoftwareII\software\src\main\java\com\mycompany\software\ClientesController.java
 C:\Users\riesp\OneDrive\Documentos\NetBeansProjects\software\SoftwareII\software\src\main\java\com\mycompany\software\ZonasController.java
 C:\Users\riesp\OneDrive\Documentos\NetBeansProjects\software\SoftwareII\software\src\main\java\com\mycompany\model\PedidosAAlmacen.java
+C:\Users\riesp\OneDrive\Documentos\NetBeansProjects\software\SoftwareII\software\src\main\java\com\mycompany\software\SeccionesController.java
 C:\Users\riesp\OneDrive\Documentos\NetBeansProjects\software\SoftwareII\software\src\main\java\com\mycompany\ejb\ClientesFacadeLocal.java
+C:\Users\riesp\OneDrive\Documentos\NetBeansProjects\software\SoftwareII\software\src\main\java\com\mycompany\ejb\SeccionesFacadeLocal.java
 C:\Users\riesp\OneDrive\Documentos\NetBeansProjects\software\SoftwareII\software\src\main\java\com\mycompany\ejb\PlatosFacadeLocal.java
 C:\Users\riesp\OneDrive\Documentos\NetBeansProjects\software\SoftwareII\software\src\main\java\com\mycompany\ejb\TrabajadoresFacadeLocal.java
 C:\Users\riesp\OneDrive\Documentos\NetBeansProjects\software\SoftwareII\software\src\main\java\com\mycompany\model\Almacenes.java
 C:\Users\riesp\OneDrive\Documentos\NetBeansProjects\software\SoftwareII\software\src\main\java\com\mycompany\model\Clientes.java
 C:\Users\riesp\OneDrive\Documentos\NetBeansProjects\software\SoftwareII\software\src\main\java\com\mycompany\software\AlmacenesController.java
+C:\Users\riesp\OneDrive\Documentos\NetBeansProjects\software\SoftwareII\software\src\main\java\com\mycompany\model\Secciones.java
 C:\Users\riesp\OneDrive\Documentos\NetBeansProjects\software\SoftwareII\software\src\main\java\com\mycompany\model\Trabajadores.java
 C:\Users\riesp\OneDrive\Documentos\NetBeansProjects\software\SoftwareII\software\src\main\java\com\mycompany\software\TrabajadoresController.java
 C:\Users\riesp\OneDrive\Documentos\NetBeansProjects\software\SoftwareII\software\src\main\java\com\mycompany\ejb\PlatosFacade.java
@@ -29,5 +32,6 @@ C:\Users\riesp\OneDrive\Documentos\NetBeansProjects\software\SoftwareII\software
 C:\Users\riesp\OneDrive\Documentos\NetBeansProjects\software\SoftwareII\software\src\main\java\com\mycompany\software\ProveedoresController.java
 C:\Users\riesp\OneDrive\Documentos\NetBeansProjects\software\SoftwareII\software\src\main\java\com\mycompany\ejb\ProveedoresFacade.java
 C:\Users\riesp\OneDrive\Documentos\NetBeansProjects\software\SoftwareII\software\src\main\java\com\mycompany\model\Peticiones.java
+C:\Users\riesp\OneDrive\Documentos\NetBeansProjects\software\SoftwareII\software\src\main\java\com\mycompany\ejb\SeccionesFacade.java
 C:\Users\riesp\OneDrive\Documentos\NetBeansProjects\software\SoftwareII\software\src\main\java\com\mycompany\ejb\TrabajadoresFacade.java
 C:\Users\riesp\OneDrive\Documentos\NetBeansProjects\software\SoftwareII\software\src\main\java\com\mycompany\ejb\ZonasFacadeLocal.java
