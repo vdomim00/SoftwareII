@@ -2,9 +2,14 @@
 package com.mycompany.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -39,6 +44,18 @@ public class Trabajadores implements Serializable{
     @Column(name = "rol")
     private String rol;
 
+    @OneToMany(mappedBy = "trabajadores", cascade = CascadeType.ALL)
+    private List<Peticiones> listaPeticiones = new ArrayList<Peticiones>();
+
+    public List<Peticiones> getListaPeticiones() {
+        return listaPeticiones;
+    }
+
+    public void setListaPeticiones(List<Peticiones> listaPeticiones) {
+        this.listaPeticiones = listaPeticiones;
+    }
+    
+    
     public String getUsuario() {
         return usuario;
     }
@@ -109,6 +126,35 @@ public class Trabajadores implements Serializable{
 
     public void setRol(String rol) {
         this.rol = rol;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Trabajadores other = (Trabajadores) obj;
+        if (!Objects.equals(this.usuario, other.usuario)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Trabajadores{" + "usuario=" + usuario + '}';
     }
     
     
