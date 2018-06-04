@@ -22,7 +22,6 @@ public class PedidosController implements Serializable{
     
     private Clientes clientes;
     private Pedidos pedidos;
-    private List<Platos> listaPlatos;
     
     @PostConstruct
     public void init(){

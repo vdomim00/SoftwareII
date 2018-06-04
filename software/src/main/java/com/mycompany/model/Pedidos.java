@@ -51,6 +51,17 @@ public class Pedidos implements Serializable{
     private Clientes clientes;
     
     
+    @ManyToMany(mappedBy = "pedidos")
+    private List<Platos> platos;
+
+    public List<Platos> getPlatos() {
+        return platos;
+    }
+
+    public void setPlatos(List<Platos> platos) {
+        this.platos = platos;
+    }
+    
     public Clientes getClientes() {
         return clientes;
     }

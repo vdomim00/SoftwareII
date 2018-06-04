@@ -1,12 +1,1 @@
-com\mycompany\model\Almacenes_.class
 com\mycompany\ejb\AbstractFacade.class
-com\mycompany\model\Platos_.class
-com\mycompany\model\Pedidos_.class
-com\mycompany\model\PedidosAAlmacen_.class
-com\mycompany\model\Secciones_.class
-com\mycompany\model\Zonas_.class
-com\mycompany\model\Trabajadores_.class
-com\mycompany\model\Clientes_.class
-com\mycompany\model\PedidosAProveedores_.class
-com\mycompany\model\Proveedores_.class
-com\mycompany\model\Peticiones_.class
