@@ -46,7 +46,19 @@ public class Trabajadores implements Serializable{
 
     @OneToMany(mappedBy = "trabajadores", cascade = CascadeType.ALL)
     private List<Peticiones> listaPeticiones = new ArrayList<Peticiones>();
+    
+    @OneToMany(mappedBy = "trabajadores", cascade = CascadeType.ALL)
+    private List<PedidosAProveedores> listaPedidosAProveedores = new ArrayList<PedidosAProveedores>();
 
+    public List<PedidosAProveedores> getListaPedidosAProveedores() {
+        return listaPedidosAProveedores;
+    }
+
+    public void setListaPedidosAProveedores(List<PedidosAProveedores> listaPedidosAProveedores) {
+        this.listaPedidosAProveedores = listaPedidosAProveedores;
+    }
+
+    
     public List<Peticiones> getListaPeticiones() {
         return listaPeticiones;
     }

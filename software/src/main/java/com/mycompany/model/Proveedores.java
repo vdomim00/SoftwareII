@@ -2,10 +2,14 @@
 package com.mycompany.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -34,6 +38,18 @@ public class Proveedores implements Serializable{
     @Column(name = "URL")
     private String URL;
 
+    @OneToMany(mappedBy = "proveedores", cascade = CascadeType.ALL)
+    private List<PedidosAProveedores> listaPedidosAProveedores = new ArrayList<PedidosAProveedores>();
+
+    public List<PedidosAProveedores> getListaPedidosAProveedores() {
+        return listaPedidosAProveedores;
+    }
+
+    public void setListaPedidosAProveedores(List<PedidosAProveedores> listaPedidosAProveedores) {
+        this.listaPedidosAProveedores = listaPedidosAProveedores;
+    }
+    
+    
     public String getCIF() {
         return CIF;
     }

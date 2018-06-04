@@ -2,6 +2,7 @@ C:\Users\riesp\OneDrive\Documentos\NetBeansProjects\software\SoftwareII\software
 C:\Users\riesp\OneDrive\Documentos\NetBeansProjects\software\SoftwareII\software\src\main\java\com\mycompany\ejb\AbstractFacade.java
 C:\Users\riesp\OneDrive\Documentos\NetBeansProjects\software\SoftwareII\software\src\main\java\com\mycompany\model\Proveedores.java
 C:\Users\riesp\OneDrive\Documentos\NetBeansProjects\software\SoftwareII\software\src\main\java\com\mycompany\model\PlatosController.java
+C:\Users\riesp\OneDrive\Documentos\NetBeansProjects\software\SoftwareII\software\src\main\java\com\mycompany\software\PedidosAProveedoresController.java
 C:\Users\riesp\OneDrive\Documentos\NetBeansProjects\software\SoftwareII\software\src\main\java\com\mycompany\model\Zonas.java
 C:\Users\riesp\OneDrive\Documentos\NetBeansProjects\software\SoftwareII\software\src\main\java\com\mycompany\software\PedidosAAlmacenController.java
 C:\Users\riesp\OneDrive\Documentos\NetBeansProjects\software\SoftwareII\software\src\main\java\com\mycompany\ejb\AlmacenesFacade.java
@@ -29,8 +30,11 @@ C:\Users\riesp\OneDrive\Documentos\NetBeansProjects\software\SoftwareII\software
 C:\Users\riesp\OneDrive\Documentos\NetBeansProjects\software\SoftwareII\software\src\main\java\com\mycompany\ejb\PedidosAAlmacenFacadeLocal.java
 C:\Users\riesp\OneDrive\Documentos\NetBeansProjects\software\SoftwareII\software\src\main\java\com\mycompany\ejb\ProveedoresFacadeLocal.java
 C:\Users\riesp\OneDrive\Documentos\NetBeansProjects\software\SoftwareII\software\src\main\java\com\mycompany\ejb\PedidosAAlmacenFacade.java
+C:\Users\riesp\OneDrive\Documentos\NetBeansProjects\software\SoftwareII\software\src\main\java\com\mycompany\ejb\PedidosAProveedoresFacade.java
 C:\Users\riesp\OneDrive\Documentos\NetBeansProjects\software\SoftwareII\software\src\main\java\com\mycompany\software\ProveedoresController.java
 C:\Users\riesp\OneDrive\Documentos\NetBeansProjects\software\SoftwareII\software\src\main\java\com\mycompany\ejb\ProveedoresFacade.java
+C:\Users\riesp\OneDrive\Documentos\NetBeansProjects\software\SoftwareII\software\src\main\java\com\mycompany\ejb\PedidosAProveedoresFacadeLocal.java
+C:\Users\riesp\OneDrive\Documentos\NetBeansProjects\software\SoftwareII\software\src\main\java\com\mycompany\model\PedidosAProveedores.java
 C:\Users\riesp\OneDrive\Documentos\NetBeansProjects\software\SoftwareII\software\src\main\java\com\mycompany\model\Peticiones.java
 C:\Users\riesp\OneDrive\Documentos\NetBeansProjects\software\SoftwareII\software\src\main\java\com\mycompany\ejb\SeccionesFacade.java
 C:\Users\riesp\OneDrive\Documentos\NetBeansProjects\software\SoftwareII\software\src\main\java\com\mycompany\ejb\TrabajadoresFacade.java
