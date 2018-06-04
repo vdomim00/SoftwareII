@@ -2,12 +2,18 @@
 package com.mycompany.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -36,6 +42,18 @@ public class Clientes implements Serializable{
     @Column(name = "pass")
     private String pass;
 
+    @OneToMany(mappedBy = "clientes", cascade = CascadeType.ALL)
+    private List<Pedidos> listaPedidos = new ArrayList<Pedidos>();
+
+    public List<Pedidos> getListaPedidos() {
+        return listaPedidos;
+    }
+
+    public void setListaPedidos(List<Pedidos> listaPedidos) {
+        this.listaPedidos = listaPedidos;
+    }
+    
+    
     public String getUsuario() {
         return usuario;
     }

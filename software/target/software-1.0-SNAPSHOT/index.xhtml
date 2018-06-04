@@ -8,9 +8,10 @@
     </h:head>
     <h:body>
         <h:form>
-            <p:inputText value="#{pedidosAProveedoresController.trabajadores.usuario}"/>
-            <p:inputText value="#{pedidosAProveedoresController.proveedores.CIF}"/>
-            <p:commandButton value="Registrar" actionListener="#{pedidosAProveedoresController.registrar()}"/>
+            <p:inputText value="#{pedidosController.pedidos.nombrePlatos}"/>
+            <p:inputText value="#{pedidosController.clientes.usuario}"/>
+            <p:inputText value="#{platosController.platos.nombrePlato}"/>
+            <p:commandButton value="Registrar" actionListener="#{pedidosController.registrar()}"/>
         </h:form>
     </h:body>
 </html>

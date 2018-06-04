@@ -2,10 +2,13 @@
 package com.mycompany.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -28,6 +31,7 @@ public class Platos implements Serializable{
     @Column(name = "precio")
     private double precio;
 
+    
     public String getNombrePlato() {
         return nombrePlato;
     }
