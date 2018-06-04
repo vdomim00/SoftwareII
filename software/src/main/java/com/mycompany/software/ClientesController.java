@@ -15,7 +15,23 @@ public class ClientesController implements Serializable{
     
     @EJB
     private ClientesFacadeLocal clientesEJB;
+    
     private Clientes clientes;
+    
+    @PostConstruct
+    public void init(){
+        clientes = new Clientes();
+    }
+    
+    /**
+     *
+     */
+    public void registrar(){
+        try {
+            clientesEJB.create(clientes);
+        } catch (Exception e) {
+        }
+    }
 
     public ClientesFacadeLocal getClientesEJB() {
         return clientesEJB;
@@ -34,15 +50,4 @@ public class ClientesController implements Serializable{
     }
     
     
-    @PostConstruct
-    public void init(){
-        clientes = new Clientes();
-    }
-    
-    public void registrar(){
-        try {
-            clientesEJB.create(clientes);
-        } catch (Exception e) {
-        }
-    }
 }

@@ -2,6 +2,7 @@
 package com.mycompany.model;
 
 import java.io.Serializable;
+import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,7 +15,7 @@ import javax.persistence.Table;
 public class Clientes implements Serializable{
     
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name ="usuario")
     private String usuario;
     
     @Column(name = "nombre")
@@ -23,14 +24,14 @@ public class Clientes implements Serializable{
     @Column(name = "apellidos")
     private String apellidos;
     
-    @Column(name = "dni")
-    private String dni;
+    @Column(name = "DNI")
+    private String DNI;
     
     @Column(name = "email")
     private String email;
     
     @Column(name = "telefono")
-    private String telefono;
+    private String  telefono;
     
     @Column(name = "pass")
     private String pass;
@@ -59,12 +60,12 @@ public class Clientes implements Serializable{
         this.apellidos = apellidos;
     }
 
-    public String getDni() {
-        return dni;
+    public String getDNI() {
+        return DNI;
     }
 
-    public void setDni(String dni) {
-        this.dni = dni;
+    public void setDNI(String DNI) {
+        this.DNI = DNI;
     }
 
     public String getEmail() {
@@ -89,6 +90,35 @@ public class Clientes implements Serializable{
 
     public void setPass(String pass) {
         this.pass = pass;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Clientes other = (Clientes) obj;
+        if (!Objects.equals(this.usuario, other.usuario)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Clientes{" + "usuario=" + usuario + '}';
     }
     
     

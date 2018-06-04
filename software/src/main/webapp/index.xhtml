@@ -8,8 +8,9 @@
     </h:head>
     <h:body>
         <h:form>
-            <p:inputText value="#{clientesController.clientes.nombre}"/>
-            <p:commandButton value="Registrar" actionListener="#{clientesController.registrar()}"/>
+            <p:inputText value="#{seccionesController.secciones.nombreSeccion}"/>
+            <p:inputText value="#{seccionesController.zonas.nombreZona}"/>
+            <p:commandButton value="Registrar" actionListener="#{seccionesController.registrar()}"/>
         </h:form>
     </h:body>
 </html>
