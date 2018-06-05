@@ -30,11 +30,8 @@ public class TrabajadoresController implements Serializable{
     
     public void eliminar(){
     
-        System.out.println("Usuario "+usuario);
-        
         try {
             Trabajadores tr = trabajadoresEJB.find(usuario);
-            System.out.println("Trabajador: "+tr.getUsuario());
             trabajadoresEJB.remove(tr);
         } catch (Exception e) {
         }
