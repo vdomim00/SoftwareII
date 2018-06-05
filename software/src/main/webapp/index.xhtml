@@ -20,6 +20,19 @@
                 <p:commandButton icon="ui-icon-key" value="Iniciar Sesion" action="#{loginController.iniciarSesion()}"/>
             </h:panelGrid>
         </h:form>
+        <h:form>
+            <p:messages autoUpdate="true" showDetail="true"/>
+            <h:panelGrid columns="2">
+                <p:outputLabel for="txtUsuario2" value="usuario"/>
+                <p:inputText id="txtUsuario2" value="#{loginController.clientes.usuario}" required="true"/>
+                
+                <p:outputLabel for="txtPassword2" value="password"/>
+                <p:inputText id="txtPassword2" value="#{loginController.clientes.pass}" required="true"/>
+                
+                <p:column/>
+                <p:commandButton icon="ui-icon-key" value="Iniciar Sesion" action="#{loginController.iniciarSesionCliente()}"/>
+            </h:panelGrid>
+        </h:form>
     </h:body>
 </html>
 
