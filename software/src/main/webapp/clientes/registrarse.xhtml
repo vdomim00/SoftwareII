@@ -57,7 +57,7 @@ and open the template in the editor.
                     <p:message for="pass2"/>
                 </p:panelGrid>    
             </p:fieldset>
-            <p:commandButton icon="ui-icon-check" value="Registrar" update="pgDatos, pgCuenta"/>
+            <p:commandButton icon="ui-icon-check" value="Registrar" update="pgDatos, pgCuenta" actionListener="#{clientesController.registrar()}"/>
         </h:form>
     </h:body>
 </html>
