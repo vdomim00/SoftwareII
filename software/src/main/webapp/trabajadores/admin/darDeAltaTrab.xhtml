@@ -10,9 +10,63 @@
     </h:head>
     <h:body>
         <h:form>
-            <p:commandButton value="EYY"/>
-            Hola
-            <p>Heeeey</p>
+            <p:messages id="mensaje" autoUpdate="false"/>
+            
+            <p:fieldset legend="Datos Personales">
+                <p:panelGrid columns="3" id="pgDatos">
+                    <p:outputLabel for="txtNombre" value="Nombre"/>
+                    <p:inputText id="txtNombre" value="#{trabajadoresController.trabajadores.nombre}" required="true"/>
+                    <p:message for="txtNombre"/>
+                    
+                    <p:outputLabel for="txtApellido" value="Apellidos"/>
+                    <p:inputText id="txtApellido" value="#{trabajadoresController.trabajadores.apellidos}" required="true"/>
+                    <p:message for="txtNombre"/>
+                    
+                    <p:outputLabel for="txtDNI" value="DNI"/>
+                    <p:inputText id="txtDNI" value="#{trabajadoresController.trabajadores.DNI}" required="true"/>
+                    <p:message for="txtDNI"/>
+                    
+                    <p:outputLabel for="txtSS" value="Número SS"/>
+                    <p:inputText id="txtSS" value="#{trabajadoresController.trabajadores.numeroSS}" required="true"/>
+                    <p:message for="txtSS"/>
+                    
+                    <p:outputLabel for="txtCuenta" value="Número de Cuenta"/>
+                    <p:inputText id="txtCuenta" value="#{trabajadoresController.trabajadores.numeroCuenta}" required="true"/>
+                    <p:message for="txtCuenta"/>
+                    
+                    <p:outputLabel for="txtEmail" value="Email"/>
+                    <p:inputText id="txtEmail" value="#{trabajadoresController.trabajadores.email}" required="true"/>
+                    <p:message for="txtEmail"/>
+                    
+                    <p:outputLabel for="rdbRoll" value="Roll"/>
+                    <p:selectOneRadio id="rdbRoll" value="#{trabajadoresController.trabajadores.rol}" required="true">
+                        <f:selectItem itemValue="cocinero" itemLabel="Cocinero"/>
+                        <f:selectItem itemValue="camarero" itemLabel="Camarero"/>
+                        <f:selectItem itemValue="encargado" itemLabel="Encaragado del Almacen"/>
+                    </p:selectOneRadio>
+                    <p:message for="rdbRoll"/>
+                    
+                </p:panelGrid>    
+            </p:fieldset>
+            <p:fieldset legend="Datos de la Cuenta">
+                <p:panelGrid columns="3" id="pgCuenta">
+                    <p:outputLabel for="txtUsuario" value="Usuario"/>
+                    <p:inputText id="txtUsuario" value="#{trabajadoresController.trabajadores.usuario}" required="true" requiredMessage="Campo Requerido"/>
+                    <p:message for="txtUsuario"/>
+                    
+                    <p:outputLabel for="pass1" value="Password"/>
+                    <p:password id="pass1" required="true" value="#{trabajadoresController.trabajadores.pass}"
+                                validatorMessage="Las contraseñas no coinciden" weakLabel="Debil"
+                                goodLabel="Buena" strongLabel="Fuerte" requiredMessage="Campo Requerido"
+                                match="pass2" feedback="true" promptLabel="Ingrese una contraseña"/>
+                    <p:message for="pass1"/>
+                    
+                    <p:outputLabel for="pass2" value="Repetir Password"/>
+                    <p:password id="pass2" required="true" requiredMessage="Campo Requerido"/>
+                    <p:message for="pass2"/>
+                </p:panelGrid>    
+            </p:fieldset>
+            <p:commandButton icon="ui-icon-check" value="Registrar" update="pgDatos, pgCuenta"/>
         </h:form>
     </h:body>
 </html>
