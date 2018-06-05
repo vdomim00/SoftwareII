@@ -38,7 +38,7 @@ public class Platos implements Serializable{
         name = "pedidos_has_platos",
         joinColumns = @JoinColumn(name = "pedidos_idVenta", referencedColumnName = "idPedido"),
         inverseJoinColumns = @JoinColumn(name = "platos_nombrePlato", referencedColumnName = "nombrePlato"))
-    private List<Pedidos> pedidos;
+    private List<Pedidos> pedidos = new ArrayList<Pedidos>();
 
     public List<Pedidos> getPedidos() {
         return pedidos;

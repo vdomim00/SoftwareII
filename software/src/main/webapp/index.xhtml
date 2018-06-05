@@ -8,10 +8,17 @@
     </h:head>
     <h:body>
         <h:form>
-            <p:inputText value="#{pedidosController.pedidos.platos}"/>
-            <p:inputText value="#{pedidosController.clientes.usuario}"/>
-            <p:inputText value="#{platosController.platos.nombrePlato}"/>
-            <p:commandButton value="Registrar" actionListener="#{pedidosController.registrar()}"/>
+            <p:messages autoUpdate="true" showDetail="true"/>
+            <h:panelGrid columns="2">
+                <p:outputLabel for="txtUsuario" value="usuario"/>
+                <p:inputText id="txtUsuario" value="#{loginController.trabajadores.usuario}" required="true"/>
+                
+                <p:outputLabel for="txtPassword" value="password"/>
+                <p:inputText id="txtPassword" value="#{loginController.trabajadores.pass}" required="true"/>
+                
+                <p:column/>
+                <p:commandButton icon="ui-icon-key" value="Iniciar Sesion" action="#{loginController.iniciarSesion()}"/>
+            </h:panelGrid>
         </h:form>
     </h:body>
 </html>

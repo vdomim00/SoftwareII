@@ -48,11 +48,11 @@ public class Pedidos implements Serializable{
 
     @ManyToOne(cascade = CascadeType.REFRESH)
     @JoinColumn(referencedColumnName = "usuario", name = "clientes_usuario")
-    private Clientes clientes;
+    private Clientes clientes = new Clientes();
     
     
     @ManyToMany(mappedBy = "pedidos")
-    private List<Platos> platos;
+    private List<Platos> platos = new ArrayList<Platos>();
 
     public List<Platos> getPlatos() {
         return platos;
