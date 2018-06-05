@@ -57,9 +57,9 @@ public class LoginController implements Serializable{
             tr = trabajadoresEJB.iniciarSesion(trabajadores);
             if(tr != null){
                 if(tr.getRol().equals("administrador")){
-                    redireccion = "trabajadores/admin"; 
+                    redireccion = "trabajadores/admin?faces-redirect=true"; 
                 }else if(tr.getRol().equals("cocinero")){
-                    redireccion = "trabajadores/cocinero"; 
+                    redireccion = "trabajadores/cocinero?faces-redirect=true"; 
                 }
                 
             }else{

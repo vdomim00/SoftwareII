@@ -15,9 +15,9 @@ and open the template in the editor.
         <h:form>
             <p:panelMenu>
                 <p:submenu label="Gestionar Trabajadores">
-                    <p:menuitem value="Dar de Alta" icon="ui-icon-disk" url="trabajadores/admin/darDeAltaTrab.xhtml"/>
-                    <p:menuitem value="Dar de Baja" icon="ui-icon-trash" url="trabajadores/admin/darDeBajaTrab.xhtml"/>
-                    <p:menuitem value="Modificar" icon="ui-icon-pencil" url="trabajadores/admin/modificarTrab.xhtml"/>
+                    <p:menuitem value="Dar de Alta" icon="ui-icon-disk" action="./admin/darDeAltaTrab.xhtml?faces-redirect=true"/>
+                    <p:menuitem value="Dar de Baja" icon="ui-icon-trash" url="./admin/darDeBajaTrab.xhtml?faces-redirect=true"/>
+                    <p:menuitem value="Modificar" icon="ui-icon-pencil" url="./admin/modificarTrab.xhtml?faces-redirect=true"/>
                 </p:submenu>
                 <p:submenu label="Gestionar Proveedores">
                     <p:menuitem value="Dar de Alta" icon="ui-icon-disk"/>
