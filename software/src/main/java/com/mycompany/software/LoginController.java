@@ -20,9 +20,10 @@ public class LoginController implements Serializable{
     @EJB
     private TrabajadoresFacadeLocal trabajadoresEJB;
     
-    private Trabajadores trabajadores;
-    
+    @EJB
     private ClientesFacadeLocal clientesEJB;
+    
+    private Trabajadores trabajadores;
     
     private Clientes clientes;
     
@@ -80,7 +81,7 @@ public class LoginController implements Serializable{
         try {
             cl = clientesEJB.iniciarSesion(clientes);
             if(cl != null){
-                redireccion="clientes";                
+                redireccion="/faces/clientes/clientes?faces-redirect=true";                
             }else{
                 FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Aviso", "Credenciales incorrectas"));
             }
