@@ -4,6 +4,8 @@ package com.mycompany.software;
 import com.mycompany.ejb.TrabajadoresFacadeLocal;
 import com.mycompany.model.Trabajadores;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.view.ViewScoped;
@@ -17,19 +19,57 @@ public class TrabajadoresController implements Serializable{
     private TrabajadoresFacadeLocal trabajadoresEJB;
     
     private Trabajadores trabajadores;
+    private List<Trabajadores> listaTrabajadores;
+    private String usuario;
     
     @PostConstruct
     public void init(){
         trabajadores = new Trabajadores();
+        listaTrabajadores = trabajadoresEJB.findAll();
     }
     
-    public void registrar(){
+    public void eliminar(){
+    
+        System.out.println("Usuario "+usuario);
+        
         try {
-            trabajadoresEJB.create(trabajadores);
+            Trabajadores tr = trabajadoresEJB.find(usuario);
+            System.out.println("Trabajador: "+tr.getUsuario());
+            trabajadoresEJB.remove(tr);
         } catch (Exception e) {
         }
     }
+    
+    public String registrar(){
+        
+        String redireccion = null;
+        try {
+            trabajadoresEJB.create(trabajadores);
+            redireccion = "/faces/trabajadores/admin.xhtml?faces-redirect=true";
+        } catch (Exception e) {
+        }
+        
+        return redireccion;
+    }
 
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+    
+    public List<Trabajadores> getListaTrabajadores() {
+        return listaTrabajadores;
+    }
+
+    public void setListaTrabajadores(List<Trabajadores> listaTrabajadores) {
+        this.listaTrabajadores = listaTrabajadores;
+    }
+    
+    
     public TrabajadoresFacadeLocal getTrabajadoresEJB() {
         return trabajadoresEJB;
     }

@@ -30,7 +30,7 @@ public class TrabajadoresFacade extends AbstractFacade<Trabajadores> implements 
     public TrabajadoresFacade() {
         super(Trabajadores.class);
     }
- 
+    
     @Override
     public Trabajadores iniciarSesion(Trabajadores tr){
         
