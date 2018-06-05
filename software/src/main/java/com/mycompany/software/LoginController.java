@@ -3,6 +3,8 @@ package com.mycompany.software;
 
 import com.mycompany.ejb.TrabajadoresFacadeLocal;
 import com.mycompany.model.Trabajadores;
+import com.mycompany.ejb.ClientesFacadeLocal;
+import com.mycompany.model.Clientes;
 import java.io.Serializable;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
@@ -20,17 +22,30 @@ public class LoginController implements Serializable{
     
     private Trabajadores trabajadores;
     
+    private ClientesFacadeLocal clientesEJB;
+    
+    private Clientes clientes;
+    
     @PostConstruct
     public void init(){
         trabajadores = new Trabajadores();
+        clientes = new Clientes();
     }
 
     public Trabajadores getTrabajadores() {
         return trabajadores;
     }
+    
+    public Clientes getClientes() {
+        return clientes;
+    }
 
     public void setTrabajadores(Trabajadores trabajadores) {
         this.trabajadores = trabajadores;
+    }
+    
+    public void setClientes(Clientes clientes) {
+        this.clientes = clientes;
     }
     
     public String iniciarSesion(){
@@ -57,4 +72,22 @@ public class LoginController implements Serializable{
         return redireccion;
     }
     
+    public String iniciarSesionCliente(){
+        
+        Clientes cl;
+        String redireccion = null;
+        
+        try {
+            cl = clientesEJB.iniciarSesion(clientes);
+            if(cl != null){
+                redireccion="clientes";                
+            }else{
+                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Aviso", "Credenciales incorrectas"));
+            }
+        } catch (Exception e) {
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_FATAL, "Aviso", "Error"));
+        }
+        
+        return redireccion;
+    }
 }

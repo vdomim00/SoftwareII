@@ -23,4 +23,5 @@ public interface ClientesFacadeLocal {
 
     int count();
     
+    Clientes iniciarSesion(Clientes cl);
 }
