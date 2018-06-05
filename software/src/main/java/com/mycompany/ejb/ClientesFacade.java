@@ -38,7 +38,7 @@ public class ClientesFacade extends AbstractFacade<Clientes> implements Clientes
         String consulta;
         
         try {
-            consulta = "FROM clientes c WHERE c.usuario = ?1 and c.pass = ?2";
+            consulta = "FROM Clientes c WHERE c.usuario = ?1 and c.pass = ?2";
             Query query = em.createQuery(consulta);
             query.setParameter(1, cl.getUsuario());
             query.setParameter(2, cl.getPass());

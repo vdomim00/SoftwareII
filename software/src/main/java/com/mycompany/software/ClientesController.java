@@ -23,9 +23,6 @@ public class ClientesController implements Serializable{
         clientes = new Clientes();
     }
     
-    /**
-     *
-     */
     public void registrar(){
         try {
             clientesEJB.create(clientes);
