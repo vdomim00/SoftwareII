@@ -66,6 +66,8 @@ public class LoginController implements Serializable{
                     redireccion = "trabajadores/admin?faces-redirect=true"; 
                 }else if(tr.getRol().equals("cocinero")){
                     redireccion = "trabajadores/cocinero?faces-redirect=true"; 
+                }else if(tr.getRol().equals("encargado")){
+                    redireccion = "trabajadores/encargado?faces-redirect=true"; 
                 }
                 
             }else{

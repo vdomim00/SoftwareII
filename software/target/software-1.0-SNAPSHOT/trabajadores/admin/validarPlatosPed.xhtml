@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Validar Platos</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:messages id="mensaje" autoUpdate="false"/>
+            
+            <p:fieldset legend="Seleccionar Plato">
+                <p:panelGrid columns="2">    
+                    <p:selectOneMenu id="rdbProveedor" value="#{peticionesController.idPeticion}" required="true">
+
+                        <f:selectItems value="#{peticionesController.listaPeticiones}"
+                                       var="pet" itemValue="#{pet.idPeticion}" itemLabel="#{pet.nombrePlato}"/>
+                    </p:selectOneMenu>
+
+                    <p:commandButton update="field1" icon="ui-icon-disk" value="Cargar Datos" action="#{peticionesController.buscarPeticion()}"/>
+                </p:panelGrid>
+            </p:fieldset>
+            <p:fieldset id="field1" legend="Datos del Plato">
+                <p:panelGrid columns="2" id="pgDatos">
+                    <p:outputLabel value="IdPeticion"/>
+                    <p:outputLabel value="#{peticionesController.peticiones.idPeticion}"/>
+                    
+                    <p:outputLabel value="Nombre del Plato"/>
+                    <p:outputLabel value="#{peticionesController.peticiones.nombrePlato}"/>
+                    
+                    <p:outputLabel value="Ingredientes"/>
+                    <p:outputLabel value="#{peticionesController.peticiones.ingredientes}"/>
+                    
+                    <p:outputLabel value="Elaboración"/>
+                    <p:outputLabel  value="#{peticionesController.peticiones.elaboracion}"/>
+                    
+                    <p:outputLabel value="Alérgenos"/>
+                    <p:outputLabel  value="#{peticionesController.peticiones.alergenos}"/>
+                    
+                    <p:outputLabel value="Precio"/>
+                    <p:outputLabel  value="#{peticionesController.peticiones.precio}"/>
+                    
+                    <p:outputLabel value="Usuario"/>
+                    <p:outputLabel  value="#{peticionesController.peticiones.trabajadores.usuario}"/>
+                </p:panelGrid> 
+            </p:fieldset>
+            <p:commandButton icon="ui-icon-check" value="Validar" action="#{peticionesController.validar()}"/>
+        </h:form>
+       
+    </h:body>
+</html>
