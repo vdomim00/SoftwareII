@@ -6,6 +6,7 @@ import com.mycompany.model.Clientes;
 import java.io.Serializable;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
+import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 
@@ -23,11 +24,18 @@ public class ClientesController implements Serializable{
         clientes = new Clientes();
     }
     
-    public void registrar(){
+    public String registrar(){
+        
+        String redireccion = null;
         try {
             clientesEJB.create(clientes);
+            FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("usuario", clientes);
+            redireccion="/faces/clientes/registrado?faces-redirect=true";
         } catch (Exception e) {
+            redireccion = "";
         }
+        
+        return redireccion;
     }
 
     public ClientesFacadeLocal getClientesEJB() {

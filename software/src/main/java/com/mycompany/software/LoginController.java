@@ -12,6 +12,11 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 @Named
 @ViewScoped
@@ -81,7 +86,8 @@ public class LoginController implements Serializable{
         try {
             cl = clientesEJB.iniciarSesion(clientes);
             if(cl != null){
-                redireccion="/faces/clientes/clientes?faces-redirect=true";                
+                FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("usuario", cl);
+                redireccion="/faces/clientes/registrado?faces-redirect=true";                
             }else{
                 FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Aviso", "Credenciales incorrectas"));
             }
@@ -90,5 +96,9 @@ public class LoginController implements Serializable{
         }
         
         return redireccion;
+    }
+    
+    public void cerrarSesion(){
+        FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
     }
 }
