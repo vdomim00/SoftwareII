@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Dar de Alta</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:messages id="mensaje" autoUpdate="false"/>
+            
+            <p:fieldset legend="Datos de la Empresa">
+                <p:panelGrid columns="3" id="pgDatos">
+                    <p:outputLabel for="txtCIF" value="CIF"/>
+                    <p:inputText id="txtCIF" value="#{proveedoresController.proveedores.CIF}" required="true"/>
+                    <p:message for="txtCIF"/>
+                    
+                    <p:outputLabel for="txtNombreEmpresa" value="Nombre de Empresa"/>
+                    <p:inputText id="txtNombreEmpresa" value="#{proveedoresController.proveedores.nombreEmpresa}" required="true"/>
+                    <p:message for="txtNombreEmpresa"/>
+                    
+                    <p:outputLabel for="txtDireccion" value="Dirección"/>
+                    <p:inputText id="txtDireccion" value="#{proveedoresController.proveedores.direccion}" required="true"/>
+                    <p:message for="txtDireccion"/>
+                    
+                    <p:outputLabel for="txtTelefono" value="Teléfono"/>
+                    <p:inputText id="txtTelefono" value="#{proveedoresController.proveedores.telefono}" required="true"/>
+                    <p:message for="txtTelefono"/>
+                    
+                    <p:outputLabel for="txtEmail" value="Email"/>
+                    <p:inputText id="txtEmail" value="#{proveedoresController.proveedores.email}" required="true"/>
+                    <p:message for="txtEmail"/>
+                    
+                    <p:outputLabel for="txtFax" value="Fax"/>
+                    <p:inputText id="txtFax" value="#{proveedoresController.proveedores.fax}" required="true"/>
+                    <p:message for="txtFax"/>
+                    
+                    <p:outputLabel for="txtURL" value="URL"/>
+                    <p:inputText id="txtURL" value="#{proveedoresController.proveedores.URL}" required="true"/>
+                    <p:message for="txtURL"/>
+                    
+                </p:panelGrid>   
+            </p:fieldset>
+            <p:commandButton icon="ui-icon-check" value="Registrar" update="pgDatos" action="#{proveedoresController.registrar()}"/>
+        </h:form>
+       
+    </h:body>
+</html>

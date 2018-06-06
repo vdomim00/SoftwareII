@@ -1,16 +1,73 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title>TODO supply a title</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Modificar Trabajador</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:fieldset legend="Selecciona el Trabajador">
+                <p:panelGrid columns="2">
+                        <p:selectOneMenu id="rdbTrabajador" value="#{trabajadoresController.usuario}">
+
+                            <f:selectItems value="#{trabajadoresController.listaTrabajadores}"
+                                           var="trab" itemValue="#{trab.usuario}" itemLabel="#{trab.usuario}"/>
+
+                        </p:selectOneMenu>
+                    <p:commandButton update="field1, field2" icon="ui-icon-pencil" value="Cargar Datos" action="#{trabajadoresController.buscarTrabajador()}"/>
+                </p:panelGrid>
+            </p:fieldset>
+            <p:fieldset id="field1" legend="Datos del Trabajador">
+                <p:fieldset legend="Datos Personales">
+                <p:panelGrid columns="2" id="pgDatos">
+                    <p:outputLabel for="txtNombre" value="Nombre"/>
+                    <p:inputText id="txtNombre" value="#{trabajadoresController.trabajadores.nombre}"/>
+                    
+                    <p:outputLabel for="txtApellido" value="Apellidos"/>
+                    <p:inputText id="txtApellido" value="#{trabajadoresController.trabajadores.apellidos}"/>
+                    
+                    <p:outputLabel for="txtDNI" value="DNI"/>
+                    <p:inputText id="txtDNI" value="#{trabajadoresController.trabajadores.DNI}"/>
+                    
+                    <p:outputLabel for="txtSS" value="Número SS"/>
+                    <p:inputText id="txtSS" value="#{trabajadoresController.trabajadores.numeroSS}"/>
+                    
+                    <p:outputLabel for="txtCuenta" value="Número de Cuenta"/>
+                    <p:inputText id="txtCuenta" value="#{trabajadoresController.trabajadores.numeroCuenta}"/>
+                    
+                    <p:outputLabel for="txtEmail" value="Email"/>
+                    <p:inputText id="txtEmail" value="#{trabajadoresController.trabajadores.email}"/>
+                    
+                    <p:outputLabel for="rdbRoll" value="Roll"/>
+                    <p:selectOneMenu id="rdbRoll" value="#{trabajadoresController.trabajadores.rol}">
+                        <f:selectItem itemValue="cocinero" itemLabel="Cocinero"/>
+                        <f:selectItem itemValue="camarero" itemLabel="Camarero"/>
+                        <f:selectItem itemValue="encargado" itemLabel="Encaragado del Almacen"/>
+                    </p:selectOneMenu>
+                    
+                </p:panelGrid> 
+                </p:fieldset>
+            </p:fieldset>
+            <p:fieldset id="field2" legend="Datos de la Cuenta">
+                <p:panelGrid columns="2" id="pgCuenta">
+                    <p:outputLabel for="txtUsuario" value="Usuario"/>
+                    <p:inputText id="txtUsuario" value="#{trabajadoresController.trabajadores.usuario}" placeholder="#{trabajadoresController.trabajadores.usuario}"/>
+                    
+                    <p:outputLabel for="pass1" value="Password"/>
+                    <p:password id="pass1" value="#{trabajadoresController.trabajadores.pass}" placeholder="#{trabajadoresController.trabajadores.pass}"
+                                validatorMessage="Las contraseñas no coinciden" weakLabel="Debil"
+                                goodLabel="Buena" strongLabel="Fuerte"
+                                match="pass2" feedback="true" promptLabel="Ingrese una contraseña"/>
+                    
+                    <p:outputLabel for="pass2" value="Repetir Password"/>
+                    <p:password id="pass2" value="#{trabajadoresController.trabajadores.pass}" placeholder="#{trabajadoresController.trabajadores.pass}"/>
+                </p:panelGrid>    
+            </p:fieldset>
+            <p:commandButton icon="ui-icon-pencil" value="Modificar" action="#{trabajadoresController.modificar()}"/>
+        </h:form>
+    </h:body>
 </html>

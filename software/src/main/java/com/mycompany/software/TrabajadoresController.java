@@ -21,6 +21,7 @@ public class TrabajadoresController implements Serializable{
     private Trabajadores trabajadores;
     private List<Trabajadores> listaTrabajadores;
     private String usuario;
+    private String pass;
     
     @PostConstruct
     public void init(){
@@ -28,13 +29,53 @@ public class TrabajadoresController implements Serializable{
         listaTrabajadores = trabajadoresEJB.findAll();
     }
     
-    public void eliminar(){
+    public String eliminar(){
     
+        String redireccion = "";
+        
         try {
             Trabajadores tr = trabajadoresEJB.find(usuario);
             trabajadoresEJB.remove(tr);
+            redireccion = "/faces/trabajadores/admin.xhtml?faces-redirect=true";
         } catch (Exception e) {
         }
+        
+        return redireccion;
+    }
+    
+    public String modificar(){
+        
+        String redireccion = "";
+        try {
+            
+            System.out.println("Modificar");
+            System.out.println("Modificamos "+trabajadores.getUsuario());
+            
+            if(trabajadores.getPass().isEmpty()){
+                trabajadores.setPass(pass);
+            }
+            trabajadoresEJB.edit(trabajadores);
+            redireccion = "/faces/trabajadores/admin.xhtml?faces-redirect=true";
+        } catch (Exception e) {
+            
+        }
+        
+        return redireccion;
+    }
+    
+    public void buscarTrabajador(){
+    
+        try {
+            System.out.println("Entra si");
+            System.out.println("Usuario: "+usuario);
+            Trabajadores tr = trabajadoresEJB.find(usuario);
+            System.out.println("Trabajador encontrado: "+tr.getUsuario());
+            trabajadores = tr;
+            pass = trabajadores.getPass();
+            System.out.println("Apellido encontrado: "+tr.getApellidos());
+            System.out.println("Pass encontrado: "+tr.getPass());
+        } catch (Exception e) {
+        }        
     }
     
     public String registrar(){
