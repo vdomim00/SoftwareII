@@ -2,6 +2,7 @@
 package com.mycompany.software;
 
 import com.mycompany.ejb.ProveedoresFacadeLocal;
+import com.mycompany.model.Platos;
 import com.mycompany.model.Proveedores;
 import java.io.Serializable;
 import java.util.ArrayList;

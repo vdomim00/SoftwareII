@@ -3,10 +3,14 @@ com\mycompany\software\PlantillaController.class
 com\mycompany\model\Clientes.class
 com\mycompany\software\PedidosController.class
 com\mycompany\model\Almacenes_.class
+<<<<<<< HEAD
 com\mycompany\ejb\TrabajadoresFacadeLocal.class
 com\mycompany\ejb\ZonasFacadeLocal.class
 com\mycompany\model\Almacenes.class
 com\mycompany\model\Proveedores.class
+=======
+com\mycompany\software\plantillaController.class
+>>>>>>> 617039af545db6eb3f16974b791bf2c1449e9ac4
 com\mycompany\ejb\AbstractFacade.class
 com\mycompany\model\PedidosAProveedores.class
 com\mycompany\ejb\PedidosFacadeLocal.class
@@ -28,6 +32,7 @@ com\mycompany\ejb\TrabajadoresFacade.class
 com\mycompany\model\PedidosAAlmacen_.class
 com\mycompany\model\Secciones_.class
 com\mycompany\model\Zonas_.class
+<<<<<<< HEAD
 com\mycompany\ejb\SeccionesFacade.class
 com\mycompany\model\Zonas.class
 com\mycompany\software\LoginController.class
@@ -40,6 +45,9 @@ com\mycompany\software\TrabajadoresController.class
 com\mycompany\ejb\PedidosAProveedoresFacadeLocal.class
 com\mycompany\software\AlmacenesController.class
 com\mycompany\model\Pedidos.class
+=======
+com\mycompany\model\Productos_.class
+>>>>>>> 617039af545db6eb3f16974b791bf2c1449e9ac4
 com\mycompany\model\Trabajadores_.class
 com\mycompany\software\ProveedoresController.class
 com\mycompany\software\SeccionesController.class
