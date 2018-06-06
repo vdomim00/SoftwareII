@@ -18,7 +18,7 @@ import javax.inject.Named;
  */
 @Named
 @ViewScoped 
-public class plantillaController implements Serializable {
+public class PlantillaController implements Serializable {
     
     public void verificarSesion(){
         try{
@@ -33,7 +33,7 @@ public class plantillaController implements Serializable {
         }
     }
     
-    public String devolverUsuario(){
+    public String devolverNombreUsuario(){
         String usuario = "";
         try{
             FacesContext context = FacesContext.getCurrentInstance();
