@@ -26,13 +26,12 @@ public class ClientesController implements Serializable{
     
     public String registrar(){
         
-        String redireccion = null;
+        String redireccion = "";
         try {
             clientesEJB.create(clientes);
             FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("usuario", clientes);
             redireccion="/faces/clientes/registrado?faces-redirect=true";
         } catch (Exception e) {
-            redireccion = "";
         }
         
         return redireccion;

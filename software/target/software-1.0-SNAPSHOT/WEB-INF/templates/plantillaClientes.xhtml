@@ -11,7 +11,7 @@
         <h:outputStylesheet name="./css/default.css"/>
         <h:outputStylesheet name="./css/cssLayout.css"/>
         <title>Área Clientes</title>
-        <f:event type="preRenderView" listener="#{plantillaController.verificarSesion()}"/>
+        <f:event type="preRenderView" listener="#{PlantillaController.verificarSesion()}"/>
     </h:head>
 
     <h:body>
@@ -28,7 +28,7 @@
             <ui:insert name="bottom">
                 <h:form>
                     <p:panelMenu>
-                        <p:submenu label="Mi cuenta">
+                        <p:submenu label="Mi cuenta - #{PlantillaController.devolverNombreUsuario()}">
                             <p:menuitem value="Cerrar sesión" icon="ui-icon-disk" actionListener="#{loginController.cerrarSesion()}" action="/faces/clientes/anonimo?faces-redirect=true"/>
                         </p:submenu>
                     </p:panelMenu>
