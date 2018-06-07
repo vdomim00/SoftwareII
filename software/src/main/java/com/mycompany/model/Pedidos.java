@@ -28,7 +28,7 @@ public class Pedidos implements Serializable{
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idPedido;
+    private String idPedido;
     
     @Column(name = "estado")
     private String estado;
@@ -61,11 +61,11 @@ public class Pedidos implements Serializable{
     }
 
     
-    public int getIdPedido() {
+    public String getIdPedido() {
         return idPedido;
     }
 
-    public void setIdPedido(int idPedido) {
+    public void setIdPedido(String idPedido) {
         this.idPedido = idPedido;
     }
 

@@ -1,16 +1,43 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
 
     <body>
 
         <ui:composition template="./../WEB-INF/templates/plantillaAnonimos.xhtml">
-
             <ui:define name="content">
-                Elijo mi menú
+                <h:form id="table">
+                    <h1> Mi Menú </h1>
+                </h:form>
+                
+                <p:dataTable id="tabla" emptyMessage="No hay platos registrados" value="#{platosController.listaPlatos}" var="pla">
+                    <p:column headerText="Platos">
+                        <h:outputText value="#{pla.nombrePlato}" />
+                    </p:column>
+                    <p:column headerText="Cantidad">
+                        <p:spinner id="txtPlato" value="#{pedidosController.cantidadLocal}" min="0" maxlength="3" />
+                    </p:column>
+                    
+                    <p:column headerText="Acción">
+                        <p:commandLink value="Añadir" actionListener="#{pedidosController.sumarIngredienteLocal(pla.nombrePlato)}" update="tablaMenu"/>
+                    </p:column>
+                </p:dataTable>
+                <p:separator/>
+                <p:dataTable id="tablaMenu" emptyMessage="Puedes añadir platos a tu menú en el apartado superior" value="#{pedidosController.ingredientes}" var="ingre">
+                    <p:column headerText="Platos">
+                        <h:outputText value="#{pedidosController.ingredientes}" />
+                    </p:column>
+                    
+                    <p:column headerText="Acción">
+                        <p:commandButton icon="ui-icon-plusthick" value="Eliminar" actionListener="#{pedidosController.vaciarIngredientes()}" update="tablaMenu"/>
+                    </p:column>
+                </p:dataTable>
+                <p:separator/>
+                <p:commandButton icon="ui-icon-plusthick" value="Realizar pedido"  action="#{pedidosController.realizarPedidoCliente()}"/>
             </ui:define>
-
         </ui:composition>
 
     </body>

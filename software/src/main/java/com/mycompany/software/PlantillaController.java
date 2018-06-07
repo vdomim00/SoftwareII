@@ -82,6 +82,22 @@ public class PlantillaController implements Serializable {
         }
     }
     
+    public void verificarSesionCamarero(){
+        try{
+            FacesContext context = FacesContext.getCurrentInstance();
+            Trabajadores tr = (Trabajadores) context.getExternalContext().getSessionMap().get("trabajador");
+            if (tr == null){
+                context.getExternalContext().redirect("./../index.xhtml?faces-redirect=true");
+            }else{
+                if(!tr.getRol().equals("camarero")){
+                    context.getExternalContext().redirect("./../index.xhtml?faces-redirect=true");
+                }
+            }
+        }catch(IOException e){
+            // Log
+        }
+    }
+    
     // getters Cliente
     public String devolverNombreUsuario(){
         String usuario = "";

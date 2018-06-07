@@ -68,11 +68,10 @@ public class LoginController implements Serializable {
                         redireccion = "/trabajadores/admin?faces-redirect=true";
                         break;
                     case "cocinero":
-<<<<<<< HEAD
                         redireccion = "/trabajadores/cocinero?faces-redirect=true";
-=======
-                        redireccion = "/faces/trabajadores/cocinero?faces-redirect=true";
->>>>>>> e3891ddcea26d42c8c8cea4306a4f74ea062abef
+                        break;
+                    case "camarero":
+                        redireccion = "/trabajadores/camarero?faces-redirect=true";
                         break;
                     default:
                         redireccion = "/trabajadores/encargado?faces-redirect=true";
@@ -88,38 +87,6 @@ public class LoginController implements Serializable {
         System.out.println(" Redirección: "+redireccion);
         return redireccion;
     }
-    
-//    public void iniciarSesionTrabajador(){
-//        
-//        Trabajadores tr;
-//        System.out.println("Iniciar Sesión Trabajador Void");
-//        try {
-//            tr = trabajadoresEJB.iniciarSesion(trabajadores);
-//            if(tr != null){
-//                FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("trabajador", tr);
-//                
-//                switch (tr.getRol()) {
-//                    case "administrador":
-//                        System.out.println(" Rol: "+tr.getRol());
-//                        FacesContext.getCurrentInstance().getExternalContext().redirect("/trabajadores/admin.xhtml?faces-redirect=true");
-//                        break;
-//                    case "cocinero":
-//                        System.out.println(" Rol: "+tr.getRol());
-//                        FacesContext.getCurrentInstance().getExternalContext().redirect("/trabajadores/cocineroPlantilla.xhtml?faces-redirect=true");
-//                        break;
-//                    default:
-//                        System.out.println(" Rol: "+tr.getRol());
-//                        FacesContext.getCurrentInstance().getExternalContext().redirect("/trabajadores/encargado.xhtml?faces-redirect=true");
-//                        break;
-//                }
-//
-//            }else{
-//                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Aviso", "Credenciales incorrectas"));
-//            }
-//        } catch (Exception e) {
-//            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_FATAL, "Aviso", "Error"));
-//        }
-//    }
     
     public String iniciarSesionCliente(){
         

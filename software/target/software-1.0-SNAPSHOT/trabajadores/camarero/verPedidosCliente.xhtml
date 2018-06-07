@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./../../WEB-INF/templates/plantillaCamarero.xhtml">
+
+            <ui:define name="content">
+                <h1>Ver Pedidos de Clientes</h1>
+                <f:event type="preRenderView" listener="#{pedidosController.cargarListaPedidosPendientes()}"/>
+                <h:form>
+                    <p:messages id="mensaje" autoUpdate="false"/>
+
+                    <p:fieldset legend="Seleccionar Pedido">
+                        <p:selectOneMenu id="rdbPedidosPendientes" value="#{pedidosController.idPedido}" required="true">
+                            <f:selectItems value="#{pedidosController.listaPedidosPendientes}"
+                                           var="ped" itemValue="#{ped.idPedido}" itemLabel="#{ped.idPedido}"/>
+                        </p:selectOneMenu>
+                        <p:commandButton icon="ui-icon-arrowrefresh-1-w" value="Cargar" actionListener="#{pedidosController.cargarPedido()}" update="tablaPedido"/>
+                    </p:fieldset>
+                    <p:separator/>
+                    <p:dataTable id="tablaPedido" emptyMessage="Selecciona un pedido en el apartado superior" value="#{pedidosController.pedidos}" var="pe">
+                        <p:column headerText="ID">
+                            <h:outputText value="#{pe.idPedido}" />
+                        </p:column>
+                        
+                        <p:column headerText="Platos">
+                            <h:outputText value="#{pe.nombrePlatos}" />
+                        </p:column>
+
+                        <p:column headerText="Observaciones">
+                            <h:outputText value="#{pe.observaciones}" />
+                        </p:column>
+                    </p:dataTable>
+                    <p:separator/>
+                    <p:commandButton icon="ui-icon-trash" value="Eliminar" action="#{pedidosController.eliminarPedido()}"/>
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

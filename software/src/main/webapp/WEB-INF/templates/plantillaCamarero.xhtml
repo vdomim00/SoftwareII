@@ -10,14 +10,14 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <h:outputStylesheet name="./css/default.css"/>
         <h:outputStylesheet name="./css/cssLayout.css"/>
-        <title>Encargado</title>
-        <f:event type="preRenderView" listener="#{plantillaController.verificarSesionEncargado()}"/>
+        <title>Camarero</title>
+        <f:event type="preRenderView" listener="#{plantillaController.verificarSesionCamarero()}"/>
     </h:head>
 
     <h:body>
 
         <div id="top">
-            <ui:insert name="top">Rol #{plantillaController.devolverRolTrabajador()}</ui:insert>
+            <ui:insert name="top"> Rol #{plantillaController.devolverRolTrabajador()}</ui:insert>
         </div>
 
         <div id="content" class="center_content">
