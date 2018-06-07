@@ -3,19 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.ejb;
+package com.mycompany.model;
 
-import com.mycompany.model.Pedidos_has_platos;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 /**
  *
- * @author Adrian
+ * @author riesp
  */
 @Stateless
-public class Pedidos_has_platosFacade extends AbstractFacade<Pedidos_has_platos> implements Pedidos_has_platosFacadeLocal {
+public class DetallePedidosAAlmacenFacade extends AbstractFacade<DetallePedidosAAlmacen> implements DetallePedidosAAlmacenFacadeLocal {
 
     @PersistenceContext(unitName = "com.mycompany_software_war_1.0-SNAPSHOTPU")
     private EntityManager em;
@@ -25,8 +24,8 @@ public class Pedidos_has_platosFacade extends AbstractFacade<Pedidos_has_platos>
         return em;
     }
 
-    public Pedidos_has_platosFacade() {
-        super(Pedidos_has_platos.class);
+    public DetallePedidosAAlmacenFacade() {
+        super(DetallePedidosAAlmacen.class);
     }
     
 }

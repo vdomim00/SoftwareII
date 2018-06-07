@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -24,12 +25,13 @@ public class Productos implements Serializable{
     @Column(name = "precio")
     private double precio;
     
-    @ManyToOne(cascade = CascadeType.REFRESH)
+    @ManyToOne
     @JoinColumn(referencedColumnName = "nombreSeccion", name = "secciones_nombreSeccion")
     private Secciones secciones;
     
     @Column(name = "cantidad")
     private int cantidad;
+    
     
     public Secciones getSecciones() {
         return secciones;

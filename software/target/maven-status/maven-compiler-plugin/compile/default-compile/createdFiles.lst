@@ -1,24 +1,20 @@
-<<<<<<< HEAD
-com\mycompany\software\PlantillaController.class
-com\mycompany\model\Almacenes_.class
-=======
 com\mycompany\ejb\PeticionesFacadeLocal.class
+com\mycompany\software\ProductosController.class
 com\mycompany\software\PlantillaController.class
 com\mycompany\model\Clientes.class
 com\mycompany\software\PedidosController.class
 com\mycompany\model\Almacenes_.class
-<<<<<<< HEAD
 com\mycompany\ejb\TrabajadoresFacadeLocal.class
+com\mycompany\model\DetallePedidosAAlmacen_.class
 com\mycompany\ejb\ZonasFacadeLocal.class
 com\mycompany\model\Almacenes.class
 com\mycompany\model\Proveedores.class
-=======
-com\mycompany\software\plantillaController.class
->>>>>>> 617039af545db6eb3f16974b791bf2c1449e9ac4
->>>>>>> d2c41c3fdca72ecee07265cdbd795cb1bb27f768
 com\mycompany\ejb\AbstractFacade.class
+com\mycompany\ejb\ProductosFacadeLocal.class
 com\mycompany\model\PedidosAProveedores.class
+com\mycompany\model\DetallePedidosAAlmacen.class
 com\mycompany\ejb\PedidosFacadeLocal.class
+com\mycompany\model\Productos.class
 com\mycompany\ejb\AlmacenesFacade.class
 com\mycompany\ejb\SeccionesFacadeLocal.class
 com\mycompany\ejb\PedidosFacade.class
@@ -37,7 +33,6 @@ com\mycompany\ejb\TrabajadoresFacade.class
 com\mycompany\model\PedidosAAlmacen_.class
 com\mycompany\model\Secciones_.class
 com\mycompany\model\Zonas_.class
-<<<<<<< HEAD
 com\mycompany\ejb\SeccionesFacade.class
 com\mycompany\model\Zonas.class
 com\mycompany\software\LoginController.class
@@ -46,26 +41,29 @@ com\mycompany\ejb\PedidosAAlmacenFacade.class
 com\mycompany\model\Secciones.class
 com\mycompany\software\PeticionesController.class
 com\mycompany\ejb\ZonasFacade.class
+com\mycompany\software\DetallePedidosAAlmacenController.class
 com\mycompany\software\TrabajadoresController.class
 com\mycompany\ejb\PedidosAProveedoresFacadeLocal.class
 com\mycompany\software\AlmacenesController.class
-com\mycompany\model\Pedidos.class
-=======
 com\mycompany\model\Productos_.class
->>>>>>> 617039af545db6eb3f16974b791bf2c1449e9ac4
+com\mycompany\model\Pedidos.class
 com\mycompany\model\Trabajadores_.class
 com\mycompany\software\ProveedoresController.class
 com\mycompany\software\SeccionesController.class
 com\mycompany\ejb\PlatosFacadeLocal.class
 com\mycompany\model\Clientes_.class
+com\mycompany\model\AbstractFacade.class
 com\mycompany\model\Platos.class
 com\mycompany\software\PedidosAAlmacenController.class
 com\mycompany\software\ZonasController.class
+com\mycompany\model\DetallePedidosAAlmacenFacadeLocal.class
 com\mycompany\model\PedidosAProveedores_.class
 com\mycompany\software\ClientesController.class
 com\mycompany\model\Peticiones.class
 com\mycompany\model\PlatosController.class
 com\mycompany\software\PedidosAProveedoresController.class
+com\mycompany\ejb\ProductosFacade.class
 com\mycompany\model\Proveedores_.class
 com\mycompany\model\Peticiones_.class
 com\mycompany\model\Trabajadores.class
+com\mycompany\model\DetallePedidosAAlmacenFacade.class
