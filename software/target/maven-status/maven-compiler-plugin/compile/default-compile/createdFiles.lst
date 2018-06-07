@@ -8,6 +8,7 @@ com\mycompany\ejb\TrabajadoresFacadeLocal.class
 com\mycompany\model\DetallePedidosAAlmacen_.class
 com\mycompany\ejb\ZonasFacadeLocal.class
 com\mycompany\model\Almacenes.class
+com\mycompany\model\DetallePedidosAProveedores_.class
 com\mycompany\model\Proveedores.class
 com\mycompany\ejb\AbstractFacade.class
 com\mycompany\ejb\ProductosFacadeLocal.class
@@ -66,4 +67,5 @@ com\mycompany\ejb\ProductosFacade.class
 com\mycompany\model\Proveedores_.class
 com\mycompany\model\Peticiones_.class
 com\mycompany\model\Trabajadores.class
+com\mycompany\model\DetallePedidosAProveedores.class
 com\mycompany\model\DetallePedidosAAlmacenFacade.class

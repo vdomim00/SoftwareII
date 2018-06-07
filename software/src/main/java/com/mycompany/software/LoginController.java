@@ -68,10 +68,10 @@ public class LoginController implements Serializable {
                         redireccion = "/trabajadores/admin?faces-redirect=true";
                         break;
                     case "cocinero":
-                        redireccion = "/faces/trabajadores/cocineroPlantilla?faces-redirect=true";
+                        redireccion = "/trabajadores/cocinero?faces-redirect=true";
                         break;
                     default:
-                        redireccion = "/faces/trabajadores/encargado?faces-redirect=true";
+                        redireccion = "/trabajadores/encargado?faces-redirect=true";
                         break;
                 }
 

@@ -32,6 +32,11 @@ public class Productos implements Serializable{
     @Column(name = "cantidad")
     private int cantidad;
     
+    @OneToMany(mappedBy = "productos", cascade = CascadeType.ALL)
+    private List<DetallePedidosAAlmacen> detallePedidosAAlmacen;
+    
+    @OneToMany(mappedBy = "productos", cascade = CascadeType.ALL)
+    private List<DetallePedidosAProveedores> detallePedidosAProveedores;
     
     public Secciones getSecciones() {
         return secciones;
