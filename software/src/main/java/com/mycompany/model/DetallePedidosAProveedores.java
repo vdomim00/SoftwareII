@@ -3,6 +3,7 @@ package com.mycompany.model;
 
 import java.io.Serializable;
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -27,6 +28,29 @@ public class DetallePedidosAProveedores implements Serializable{
     @JoinColumn(name = "pedidosAProveedores_idPedidoAProveedor", referencedColumnName = "idPedidoAProveedor")
     private PedidosAProveedores pedidosAProveedores;
 
+    @Column(name = "cantidad")
+    private int cantidad;
+    
+    @Column(name = "estado")
+    private String estado;
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+    
+    
     public int getIdDetalle_pedidosAProveedores() {
         return idDetalle_pedidosAProveedores;
     }

@@ -69,9 +69,12 @@ public class LoginController implements Serializable {
                         break;
                     case "cocinero":
                         redireccion = "/trabajadores/cocinero?faces-redirect=true";
+<<<<<<< HEAD
                         break;
                     case "camarero":
                         redireccion = "/trabajadores/camarero?faces-redirect=true";
+=======
+>>>>>>> cecb6b3168ab7242dc5f50fad99989d5def9373b
                         break;
                     default:
                         redireccion = "/trabajadores/encargado?faces-redirect=true";
