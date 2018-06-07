@@ -1,9 +1,10 @@
 
 #top {
+    font-size: 20px;
     position: relative;
     background-color: #036fab;
     color: white;
-    padding: 5px;
+    padding: 7px;
     margin: 0px 0px 10px 0px;
 }
 
