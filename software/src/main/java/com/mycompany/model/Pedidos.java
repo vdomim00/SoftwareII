@@ -9,6 +9,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -51,7 +52,7 @@ public class Pedidos implements Serializable{
     private Clientes clientes = new Clientes();
     
     
-    @ManyToMany(mappedBy = "pedidos")
+    @ManyToMany(mappedBy = "pedidos", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Platos> platos = new ArrayList<Platos>();
 
     public List<Platos> getPlatos() {

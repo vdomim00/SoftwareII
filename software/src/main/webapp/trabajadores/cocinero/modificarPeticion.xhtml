@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Modificar Petición</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:fieldset legend="Selecciona la Petición">
+                <p:panelGrid columns="2">
+                    <p:selectOneMenu id="rdbProveedor" value="#{peticionesController.idPeticion}">
+
+                        <f:selectItems value="#{peticionesController.listaPeticiones}"
+                                       var="pet" itemValue="#{pet.idPeticion}" itemLabel="#{pet.nombrePlato}"/>
+
+                        </p:selectOneMenu>
+                    <p:commandButton update="field1" icon="ui-icon-pencil" value="Cargar Datos" action="#{peticionesController.buscarPeticion()}"/>
+                </p:panelGrid>
+            </p:fieldset>
+            <p:fieldset id="field1" legend="Datos del Plato">
+                <p:panelGrid columns="2" id="pgDatos">
+                    <p:outputLabel for="txtNombrePlato" value="Nombre"/>
+                    <p:inputText id="txtNombrePlato" value="#{peticionesController.peticiones.nombrePlato}"/>
+                    
+                    <p:outputLabel for="txtIngredientes" value="Ingredientes"/>
+                    <p:inputText id="txtIngredientes" value="#{peticionesController.peticiones.ingredientes}"/>
+                    
+                    <p:outputLabel for="txtElaboracion" value="Elaboración"/>
+                    <p:inputText id="txtElaboracion" value="#{peticionesController.peticiones.elaboracion}"/>
+                    
+                    <p:outputLabel for="txtAlergenos" value="Alérgenos"/>
+                    <p:inputText id="txtAlergenos" value="#{peticionesController.peticiones.alergenos}"/>
+                    
+                    <p:outputLabel for="txtPrecio" value="Precio"/>
+                    <p:inputText id="txtPrecio" value="#{peticionesController.peticiones.precio}"/>
+                       
+                </p:panelGrid> 
+            </p:fieldset>
+            <p:commandButton icon="ui-icon-pencil" value="Modificar" action="#{peticionesController.modificar()}"/>
+        </h:form>
+    </h:body>
+</html>

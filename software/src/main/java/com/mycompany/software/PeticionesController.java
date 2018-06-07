@@ -3,6 +3,7 @@ package com.mycompany.software;
 
 import com.mycompany.ejb.PeticionesFacadeLocal;
 import com.mycompany.ejb.PlatosFacadeLocal;
+import com.mycompany.ejb.TrabajadoresFacadeLocal;
 import com.mycompany.model.Peticiones;
 import com.mycompany.model.Platos;
 import com.mycompany.model.Trabajadores;
@@ -23,6 +24,9 @@ public class PeticionesController implements Serializable{
     @EJB
     private PlatosFacadeLocal platosEJB;
     
+    @EJB
+    private TrabajadoresFacadeLocal trabajadoresEJB;
+    
     private Peticiones peticiones;
     private Trabajadores trabajadores;
     private List<Peticiones> listaPeticiones;
@@ -34,7 +38,22 @@ public class PeticionesController implements Serializable{
         trabajadores = new Trabajadores();
         listaPeticiones = peticionesEJB.findAll();
     }
-    
+
+    public PlatosFacadeLocal getPlatosEJB() {
+        return platosEJB;
+    }
+
+    public void setPlatosEJB(PlatosFacadeLocal platosEJB) {
+        this.platosEJB = platosEJB;
+    }
+
+    public TrabajadoresFacadeLocal getTrabajadoresEJB() {
+        return trabajadoresEJB;
+    }
+
+    public void setTrabajadoresEJB(TrabajadoresFacadeLocal trabajadoresEJB) {
+        this.trabajadoresEJB = trabajadoresEJB;
+    }
         
     public String validar(){
     
@@ -58,6 +77,33 @@ public class PeticionesController implements Serializable{
         return redireccion;
     }
     
+    public String modificar(){
+    
+        String redireccion = "";
+        
+        try {
+            peticionesEJB.edit(peticiones);
+            redireccion = "/faces/trabajadores/cocinero.xhtml?faces-redirect=true";
+        } catch (Exception e) {
+        }
+        
+        return redireccion;
+    }
+    
+    public String eliminar(){
+    
+        String redireccion = "";
+        
+        try {
+            Peticiones pt = peticionesEJB.find(idPeticion);
+            peticionesEJB.remove(pt);
+            redireccion = "/faces/trabajadores/cocinero.xhtml?faces-redirect=true";
+        } catch (Exception e) {
+        }
+        
+        return redireccion;
+    }
+    
     public void buscarPeticion(){
     
         try {
@@ -67,12 +113,21 @@ public class PeticionesController implements Serializable{
         }
     }
     
-    public void registrar(){
+    public String registrar(){
+        
+        String redireccion = "";
+        
+        System.out.println("Entra");
         try {
+            trabajadores = trabajadoresEJB.find("asd");
+            peticiones.setTrabajadores(trabajadores);
             this.peticiones.setTrabajadores(trabajadores);
             peticionesEJB.create(peticiones);
+            redireccion = "/faces/trabajadores/cocinero.xhtml?faces-redirect=true";
         } catch (Exception e) {
         }
+        
+        return redireccion;
     }
     
     public List<Peticiones> getListaPeticiones() {

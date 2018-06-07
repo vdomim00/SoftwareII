@@ -50,7 +50,7 @@ public class ProveedoresController implements Serializable{
         String redireccion = "";
         try {
             proveedoresEJB.edit(proveedores);
-            redireccion = "/faces/trabajadores/admin.xhtml?faces-redirect=true";
+            redireccion = "/faces/trabajadores/cocinero.xhtml?faces-redirect=true";
         } catch (Exception e) {
         }
         

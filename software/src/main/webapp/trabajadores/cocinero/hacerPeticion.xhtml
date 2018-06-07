@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Hacer Petición</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:messages id="mensaje" autoUpdate="false"/>
+            
+            <p:fieldset legend="Datos del Plato">
+                <p:panelGrid columns="3" id="pgDatos">
+                    <p:outputLabel for="txtNombrePlato" value="Nombre del Plato"/>
+                    <p:inputText id="txtNombrePlato" value="#{peticionesController.peticiones.nombrePlato}" required="true"/>
+                    <p:message for="txtNombrePlato"/>
+                    
+                    <p:outputLabel for="txtIngredientes" value="Ingredientes"/>
+                    <p:inputText id="txtIngredientes" value="#{peticionesController.peticiones.ingredientes}" required="true"/>
+                    <p:message for="txtIngredientes"/>
+                    
+                    <p:outputLabel for="txtElaboracion" value="Elaboración"/>
+                    <p:inputText id="txtElaboracion" value="#{peticionesController.peticiones.elaboracion}" required="true"/>
+                    <p:message for="txtElaboracion"/>
+                    
+                    <p:outputLabel for="txtAlergenos" value="Alérgenos"/>
+                    <p:inputText id="txtAlergenos" value="#{peticionesController.peticiones.alergenos}" required="true"/>
+                    <p:message for="txtAlergenos"/>
+                    
+                    <p:outputLabel for="txtPrecio" value="Precio"/>
+                    <p:inputText id="txtPrecio" value="#{peticionesController.peticiones.precio}" required="true"/>
+                    <p:message for="txtPrecio"/>
+                    
+                </p:panelGrid>   
+            </p:fieldset>
+            <p:commandButton icon="ui-icon-check" value="Registrar" action="#{peticionesController.registrar()}"/>
+        </h:form>
+       
+    </h:body>
+</html>
