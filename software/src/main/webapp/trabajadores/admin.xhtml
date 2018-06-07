@@ -1,34 +1,37 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+<?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
-    <h:head>
-        <title>Administrador</title>
-    </h:head>
-    <h:body>
-        <h:form>
-            <p:panelMenu>
-                <p:submenu label="Gestionar Trabajadores">
-                    <p:menuitem value="Dar de Alta" icon="ui-icon-disk" action="./admin/darDeAltaTrab.xhtml?faces-redirect=true"/>
-                    <p:menuitem value="Dar de Baja" icon="ui-icon-trash" action="./admin/darDeBajaTrab.xhtml?faces-redirect=true"/>
-                    <p:menuitem value="Modificar" icon="ui-icon-pencil" action="./admin/modificarTrab.xhtml?faces-redirect=true"/>
-                </p:submenu>
-                <p:submenu label="Gestionar Proveedores">
-                    <p:menuitem value="Dar de Alta" icon="ui-icon-disk" action="./admin/darDeAltaProv.xhtml?faces-redirect=true"/>
-                    <p:menuitem value="Dar de Baja" icon="ui-icon-trash" action="./admin/darDeBajaProv.xhtml?faces-redirect=true"/>
-                    <p:menuitem value="Modificar" icon="ui-icon-pencil" action="./admin/modificarProv.xhtml?faces-redirect=true"/>
-                </p:submenu>
-                <p:submenu label="Gestionar Pedidos">
-                    <p:menuitem value="Validar Platos Pedidos" icon="ui-icon-check" action="./admin/validarPlatosPed.xhtml?faces-redirect=true"/>
-                    <p:menuitem value="Validar Pedidos a Proveedores" icon="ui-icon-check" action="./admin/darDeBajaProv.xhtml?faces-redirect=true"/>
-                </p:submenu>
-            </p:panelMenu>
-        </h:form>
-    </h:body>
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        <ui:composition template="./../WEB-INF/templates/plantillaAdministrador.xhtml">
+
+            <ui:define name="content">
+                <title>Administrador</title>
+                <h:form>
+                    <p:panelMenu>
+                        <p:submenu label="Gestionar Trabajadores">
+                            <p:menuitem value="Dar de Alta" icon="ui-icon-disk" action="./admin/darDeAltaTrab.xhtml?faces-redirect=true"/>
+                            <p:menuitem value="Dar de Baja" icon="ui-icon-trash" action="./admin/darDeBajaTrab.xhtml?faces-redirect=true"/>
+                            <p:menuitem value="Modificar" icon="ui-icon-pencil" action="./admin/modificarTrab.xhtml?faces-redirect=true"/>
+                        </p:submenu>
+                        <p:submenu label="Gestionar Proveedores">
+                            <p:menuitem value="Dar de Alta" icon="ui-icon-disk" action="./admin/darDeAltaProv.xhtml?faces-redirect=true"/>
+                            <p:menuitem value="Dar de Baja" icon="ui-icon-trash" action="./admin/darDeBajaProv.xhtml?faces-redirect=true"/>
+                            <p:menuitem value="Modificar" icon="ui-icon-pencil" action="./admin/modificarProv.xhtml?faces-redirect=true"/>
+                        </p:submenu>
+                        <p:submenu label="Gestionar Pedidos">
+                            <p:menuitem value="Validar Platos Pedidos" icon="ui-icon-check" action="./admin/validarPlatosPed.xhtml?faces-redirect=true"/>
+                            <p:menuitem value="Validar Pedidos a Proveedores" icon="ui-icon-check" action="./admin/darDeBajaProv.xhtml?faces-redirect=true"/>
+                        </p:submenu>
+                    </p:panelMenu>
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
 </html>
