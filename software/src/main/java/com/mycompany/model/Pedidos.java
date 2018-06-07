@@ -54,9 +54,7 @@ public class Pedidos implements Serializable{
     @OneToMany(mappedBy = "pedidos")
     private List<Pedidos_has_platos> pedidos_has_platos = new ArrayList<Pedidos_has_platos>();
     
-<<<<<<< HEAD
     @ManyToMany(mappedBy = "pedidos", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-=======
     public List<Pedidos_has_platos> getPedidos_has_platos() {
         return pedidos_has_platos;
     }
@@ -67,7 +65,6 @@ public class Pedidos implements Serializable{
     
     // Borrar
     @ManyToMany(mappedBy = "pedidos")
->>>>>>> d2c41c3fdca72ecee07265cdbd795cb1bb27f768
     private List<Platos> platos = new ArrayList<Platos>();
 
     public List<Platos> getPlatos() {
