@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @Named
 @ViewScoped
-public class LoginController implements Serializable{
+public class LoginController implements Serializable {
     
     @EJB
     private TrabajadoresFacadeLocal trabajadoresEJB;
@@ -54,31 +54,68 @@ public class LoginController implements Serializable{
         this.clientes = clientes;
     }
     
-    public String iniciarSesion(){
+    public String iniciarSesionTrabajador(){
         
         Trabajadores tr;
-        String redireccion = null;
-        
+        String redireccion = "";
         try {
             tr = trabajadoresEJB.iniciarSesion(trabajadores);
             if(tr != null){
-                if(tr.getRol().equals("administrador")){
-                    redireccion = "trabajadores/admin?faces-redirect=true"; 
-                }else if(tr.getRol().equals("cocinero")){
-                    redireccion = "trabajadores/cocinero?faces-redirect=true"; 
-                }else if(tr.getRol().equals("encargado")){
-                    redireccion = "trabajadores/encargado?faces-redirect=true"; 
-                }
+                FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("trabajador", tr);
                 
+                switch (tr.getRol()) {
+                    case "administrador":
+                        redireccion = "/trabajadores/admin?faces-redirect=true";
+                        break;
+                    case "cocinero":
+                        redireccion = "/faces/trabajadores/cocineroPlantilla?faces-redirect=true";
+                        break;
+                    default:
+                        redireccion = "/faces/trabajadores/encargado?faces-redirect=true";
+                        break;
+                }
+
             }else{
                 FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Aviso", "Credenciales incorrectas"));
             }
         } catch (Exception e) {
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_FATAL, "Aviso", "Error"));
         }
-        
+        System.out.println(" Redirección: "+redireccion);
         return redireccion;
     }
+    
+//    public void iniciarSesionTrabajador(){
+//        
+//        Trabajadores tr;
+//        System.out.println("Iniciar Sesión Trabajador Void");
+//        try {
+//            tr = trabajadoresEJB.iniciarSesion(trabajadores);
+//            if(tr != null){
+//                FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("trabajador", tr);
+//                
+//                switch (tr.getRol()) {
+//                    case "administrador":
+//                        System.out.println(" Rol: "+tr.getRol());
+//                        FacesContext.getCurrentInstance().getExternalContext().redirect("/trabajadores/admin.xhtml?faces-redirect=true");
+//                        break;
+//                    case "cocinero":
+//                        System.out.println(" Rol: "+tr.getRol());
+//                        FacesContext.getCurrentInstance().getExternalContext().redirect("/trabajadores/cocineroPlantilla.xhtml?faces-redirect=true");
+//                        break;
+//                    default:
+//                        System.out.println(" Rol: "+tr.getRol());
+//                        FacesContext.getCurrentInstance().getExternalContext().redirect("/trabajadores/encargado.xhtml?faces-redirect=true");
+//                        break;
+//                }
+//
+//            }else{
+//                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Aviso", "Credenciales incorrectas"));
+//            }
+//        } catch (Exception e) {
+//            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_FATAL, "Aviso", "Error"));
+//        }
+//    }
     
     public String iniciarSesionCliente(){
         

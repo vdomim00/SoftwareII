@@ -1,30 +1,33 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+<?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
-    <h:head>
-        <title>Encargado del Almacén</title>
-    </h:head>
-    <h:body>
-        <h:form>
-            <p:panelMenu>
-                <p:submenu label="Gestionar Productos">
-                    <p:menuitem value="Añadir nuevo Producto" icon="ui-icon-disk" action="./encargado/añadirProd.xhtml?faces-redirect=true"/>
-                    <p:menuitem value="Eliminar Producto" icon="ui-icon-trash" action="./encargado/eliminarProd.xhtml?faces-redirect=true"/>
-                    <p:menuitem value="Modificar Producto" icon="ui-icon-pencil" action="./encargado/modificarProd.xhtml?faces-redirect=true"/>
-                </p:submenu>
-                <p:submenu label="Gestionar Pedidos">
-                    <p:menuitem value="Hacer Pedido a Proveedor" icon="ui-icon-disk" action="./encargado/añadirProd.xhtml?faces-redirect=true"/>
-                    <p:menuitem value="Modificar Pedido a Proveedor" icon="ui-icon-pencil" action="./admin/darDeBajaProv.xhtml?faces-redirect=true"/>
-                    <p:menuitem value="Validar Pedido de Cocina" icon="ui-icon-check" action="./admin/modificarProv.xhtml?faces-redirect=true"/>
-                </p:submenu>
-            </p:panelMenu>
-        </h:form>
-    </h:body>
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        <ui:composition template="./../WEB-INF/templates/plantillaEncargado.xhtml">
+
+            <ui:define name="content">
+                <title>Encargado del Almacén</title>
+                <h:form>
+                    <p:panelMenu>
+                        <p:submenu label="Gestionar Productos">
+                            <p:menuitem value="Añadir nuevo Producto" icon="ui-icon-disk" action="./encargado/añadirProd.xhtml?faces-redirect=true"/>
+                            <p:menuitem value="Eliminar Producto" icon="ui-icon-trash" action="./encargado/eliminarProd.xhtml?faces-redirect=true"/>
+                            <p:menuitem value="Modificar Producto" icon="ui-icon-pencil" action="./encargado/modificarProd.xhtml?faces-redirect=true"/>
+                        </p:submenu>
+                        <p:submenu label="Gestionar Pedidos">
+                            <p:menuitem value="Hacer Pedido a Proveedor" icon="ui-icon-disk" action="./encargado/hacerPedidoProv.xhtml?faces-redirect=true"/>
+                            <p:menuitem value="Modificar Pedido a Proveedor" icon="ui-icon-pencil" action="./encargado/modificarPedidoProv.xhtml?faces-redirect=true"/>
+                            <p:menuitem value="Validar Pedido de Cocina" icon="ui-icon-check" action="./admin/validarPedidoCocina.xhtml?faces-redirect=true"/>
+                        </p:submenu>
+                    </p:panelMenu>
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
 </html>

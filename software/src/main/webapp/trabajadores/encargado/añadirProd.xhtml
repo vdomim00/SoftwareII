@@ -1,41 +1,47 @@
-<?xml version='1.0' encoding='UTF-8'?>
-
+<?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-    <h:head>
-        <title>Añadir Producto</title>
-    </h:head>
-    <h:body>
-        <h:form>
-            <p:messages id="mensaje" autoUpdate="false"/>
-            
-            <p:fieldset legend="Datos del Producto">
-                <p:panelGrid columns="3" id="pgDatos">
-                    <p:outputLabel for="txtCodigoProducto" value="Nombre"/>
-                    <p:inputText id="txtCodigoProducto" value="#{productosController.productos.codigoProducto}" required="true"/>
-                    <p:message for="txtCodigoProducto"/>
-                    
-                    <p:outputLabel for="txtPrecio" value="Precio"/>
-                    <p:inputText id="txtPrecio" value="#{productosController.productos.precio}" required="true"/>
-                    <p:message for="txtPrecio"/>
-                    
-                    <p:outputLabel for="txtCantidad" value="Cantidad"/>
-                    <p:inputText id="txtCantidad" value="#{productosController.productos.cantidad}" required="true"/>
-                    <p:message for="txtCantidad"/>
-                    
-                    <p:outputLabel for="txtSeccion" value="Sección"/>
-                    <p:selectOneMenu id="txtSeccion" value="#{productosController.seccion}" required="true">
-                        <f:selectItems value="#{productosController.listaSecciones}"
-                                       var="sec" itemValue="#{sec.nombreSeccion}" itemLabel="#{sec.nombreSeccion}"/>
-                    </p:selectOneMenu>
-                    <p:message for="txtSeccion"/>
-                </p:panelGrid>   
-            </p:fieldset>
-            <p:commandButton icon="ui-icon-check" value="Registrar" update="pgDatos" action="#{productosController.registrar()}"/>
-        </h:form>
-       
-    </h:body>
+
+    <body>
+
+        <ui:composition template="./../../WEB-INF/templates/plantillaEncargado.xhtml">
+
+            <ui:define name="content">
+                <h1>Añadir Producto</h1>
+                <h:form>
+                    <p:messages id="mensaje" autoUpdate="false"/>
+
+                    <p:fieldset legend="Datos del Producto">
+                        <p:panelGrid columns="3" id="pgDatos">
+                            <p:outputLabel for="txtCodigoProducto" value="Nombre"/>
+                            <p:inputText id="txtCodigoProducto" value="#{productosController.productos.codigoProducto}" required="true"/>
+                            <p:message for="txtCodigoProducto"/>
+
+                            <p:outputLabel for="txtPrecio" value="Precio"/>
+                            <p:inputText id="txtPrecio" value="#{productosController.productos.precio}" required="true"/>
+                            <p:message for="txtPrecio"/>
+
+                            <p:outputLabel for="txtCantidad" value="Cantidad"/>
+                            <p:inputText id="txtCantidad" value="#{productosController.productos.cantidad}" required="true"/>
+                            <p:message for="txtCantidad"/>
+
+                            <p:outputLabel for="txtSeccion" value="Sección"/>
+                            <p:selectOneMenu id="txtSeccion" value="#{productosController.seccion}" required="true">
+                                <f:selectItems value="#{productosController.listaSecciones}"
+                                               var="sec" itemValue="#{sec.nombreSeccion}" itemLabel="#{sec.nombreSeccion}"/>
+                            </p:selectOneMenu>
+                            <p:message for="txtSeccion"/>
+                        </p:panelGrid>   
+                    </p:fieldset>
+                    <p:commandButton icon="ui-icon-check" value="Registrar" update="pgDatos" action="#{productosController.registrar()}"/>
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
 </html>
