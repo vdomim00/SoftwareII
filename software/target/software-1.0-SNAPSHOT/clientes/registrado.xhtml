@@ -10,17 +10,42 @@
         <ui:composition template="./../WEB-INF/templates/plantillaClientes.xhtml">
 
             <ui:define name="content">
-                <h:form>
-                    <h1> Menú </h1>
-                    <p:commandButton icon="ui-icon-plusthick" value="Añadir" onclick="PF('wdialogo').show()" />
+                <h:form id="table">
+                    <h1> Mi Menú </h1>
                 </h:form>
                 
+                <p:dataTable id="tabla" emptyMessage="No hay platos registrados" value="#{platosController.listaPlatos}" var="pla">
+                    <p:column headerText="Platos">
+                        <h:outputText value="#{pla.nombrePlato}" />
+                    </p:column>
+                    
+                    <p:column headerText="Acción">
+                        <p:commandButton icon="ui-icon-plusthick" value="Añadir" onclick="PF('wdialogo').show()"/>
+                    </p:column>
+                </p:dataTable>
+                <p:separator/>
+                <p:dataTable id="tablaMenu" emptyMessage="Puedes añadir platos a tu menú en el apartado superior" value="#{pedidos_has_platosController.pedidos_has_platosListLocal}" var="peHasPla">
+                    <p:column headerText="Platos">
+                        <h:outputText value="#{peHasPla.nombrePlato}" />
+                    </p:column>
+                    
+                    <p:column headerText="Cantidad">
+                        <h:outputText value="#{peHasPla.cantidad}" />
+                    </p:column>
+                    
+                    <p:column headerText="Acción">
+                        <p:commandButton icon="ui-icon-plusthick" value="Eliminar" onclick="PF('wdialogo').show()"/>
+                    </p:column>
+                </p:dataTable>
+                <p:separator/>
+                <p:commandButton icon="ui-icon-plusthick" value="Eliminar" actionListener="#{pedidos_has_platosController.registrarListaLocal()}"/>
                 <p:dialog id="dialogo" widgetVar="wdialogo" header="Añadir Plato" modal="true" resizable="false" closeOnEscape="true" draggable="false" >
                     <h:form>
                         <h:panelGrid columns="2">
-                            <p:outputLabel for="txtMenu" value="Plato" />
-                            <p:inputMask id="txtMenu" mask="" slotChar="" required="true" />
-                            <p:commandButton value="Anadir" icon="ui-icon-check" />
+                            <p:outputLabel for="txtPlato" value="Cantidad" />
+                            <p:spinner id="txtPlato" value="#{pedidos_has_platosController.cantidadLocal}" min="0" maxlength="3" />
+                            <p:commandButton value="Añadir" icon="ui-icon-check" actionListener="#{pedidos_has_platosController.anadirAListaLocal()}"/>
+                            <p:commandButton value="Cancelar" icon="ui-icon-close" immediate="true" onclick="PF('wdialogo'.hide())"/>
                         </h:panelGrid>
                     </h:form>
                 </p:dialog>

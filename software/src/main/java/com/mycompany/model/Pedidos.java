@@ -51,8 +51,23 @@ public class Pedidos implements Serializable{
     @JoinColumn(referencedColumnName = "usuario", name = "clientes_usuario")
     private Clientes clientes = new Clientes();
     
+    @OneToMany(mappedBy = "pedidos")
+    private List<Pedidos_has_platos> pedidos_has_platos = new ArrayList<Pedidos_has_platos>();
     
+<<<<<<< HEAD
     @ManyToMany(mappedBy = "pedidos", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+=======
+    public List<Pedidos_has_platos> getPedidos_has_platos() {
+        return pedidos_has_platos;
+    }
+
+    public void setPedidos_has_platos(List<Pedidos_has_platos> pedidos_has_platos) {
+        this.pedidos_has_platos = pedidos_has_platos;
+    }
+    
+    // Borrar
+    @ManyToMany(mappedBy = "pedidos")
+>>>>>>> d2c41c3fdca72ecee07265cdbd795cb1bb27f768
     private List<Platos> platos = new ArrayList<Platos>();
 
     public List<Platos> getPlatos() {
@@ -62,6 +77,8 @@ public class Pedidos implements Serializable{
     public void setPlatos(List<Platos> platos) {
         this.platos = platos;
     }
+    
+    //
     
     public Clientes getClientes() {
         return clientes;

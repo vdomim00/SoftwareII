@@ -8,6 +8,7 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.view.ViewScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 @Named
@@ -18,15 +19,18 @@ public class PlatosController implements Serializable{
     private PlatosFacadeLocal platosEJB;
     
     private Platos platos;
+    private List<Platos> listaPlatos;
     
     @PostConstruct
     public void init(){
         platos = new Platos();
+        listaPlatos = platosEJB.findAll();
     }
     
     public void registrar(){
         try {
             platosEJB.create(platos);
+            listaPlatos = platosEJB.findAll();
         } catch (Exception e) {
             System.out.println("Error al guardar el plato");
         }
@@ -48,5 +52,11 @@ public class PlatosController implements Serializable{
         this.platos = platos;
     }
     
+    public List<Platos> getListaPlatos() {
+        return listaPlatos;
+    }
     
+    public void setListaPlatos(List<Platos> listaPlatos) {
+        this.listaPlatos = listaPlatos;
+    }
 }
