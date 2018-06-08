@@ -8,38 +8,59 @@
     <body>
 
         <ui:composition template="./../WEB-INF/templates/plantillaClientes.xhtml">
-
             <ui:define name="content">
                 <h:form id="table">
                     <h1> Mi Menú </h1>
-                </h:form>
                 
-                <p:dataTable id="tabla" emptyMessage="No hay platos registrados" value="#{platosController.listaPlatos}" var="pla">
-                    <p:column headerText="Platos">
-                        <h:outputText value="#{pla.nombrePlato}" />
-                    </p:column>
-                    <p:column headerText="Cantidad">
-                        <p:spinner id="txtPlato" value="#{pedidosController.cantidadLocal}" min="0" maxlength="3" />
-                    </p:column>
-                    
-                    <p:column headerText="Acción">
-                        <p:commandLink value="Añadir" actionListener="#{pedidosController.sumarIngredienteLocal(pla.nombrePlato)}"/>
-                    </p:column>
-                </p:dataTable>
+                    <p:panelGrid id="panelPla" columns="2">
+                        <p:column>
+                            <p:dataTable id="tabla" emptyMessage="No hay platos registrados" value="#{platosController.listaPlatos}" var="pla">
+                                <p:column headerText="Platos">
+                                    <h:outputText value="#{pla.nombrePlato}" />
+                                </p:column>
+                                
+                                <p:column headerText="Alérgenos">
+                                    <h:outputText value="#{pla.alergenos}" />
+                                </p:column>
+                                
+                                <p:column headerText="Precio">
+                                    <h:outputText value="#{pla.precio}" />
+                                </p:column>
+                                
+                                <p:column headerText="Acción">
+                                    <p:commandButton value="Añadir" action="#{pedidosController.sumarIngredienteLocal(pla.nombrePlato)}" update="panelPla"/>
+                                </p:column>
+                            </p:dataTable>
+                        </p:column>
+                        <p:column>
+                            <h:outputLabel for="txtPlato" value="Cantidad"/>
+                            <p:spinner id="txtPlato" value="#{pedidosController.cantidadLocal}" valueChangeListener="#{pedidosController.cantidadLocalChanged}" min="0" maxlength="3"/>
+                        </p:column>
+                    </p:panelGrid>
+                </h:form>
                 <p:separator/>
-                <p:dataTable id="tablaMenu" emptyMessage="Puedes añadir platos a tu menú en el apartado superior" value="#{pedidosController.ingredientes}" var="ingre">
-                    <p:column headerText="Platos">
-                        <h:outputText value="#{pedidosController.ingredientes}" />
+                <p:panelGrid id="panelPla" columns="3">
+                    <p:column>
+                        <p:dataTable id="tablaMenu" emptyMessage="Puedes añadir platos a tu menú en el apartado superior" value="#{pedidosController.listaPlatos}" var="lisPla">
+                            <p:column headerText="Platos">
+                                <h:outputText value="#{lisPla}" />
+                            </p:column>
+                        </p:dataTable>
                     </p:column>
-                    
+                    <p:column>
+                        <p:dataTable id="tablaMenuCan" emptyMessage="Puedes añadir platos a tu menú en el apartado superior" value="#{pedidosController.listaCantidad}" var="lisCan">
+                            <p:column headerText="Cantidad">
+                                <h:outputText value="#{lisCan}" />
+                            </p:column>
+                        </p:dataTable>
+                    </p:column>
                     <p:column headerText="Acción">
-                        <p:commandButton icon="ui-icon-plusthick" value="Eliminar" actionListener="#{pedidosController.vaciarIngredientes()}" update="tablaMenu"/>
+                        <p:commandButton icon="ui-icon-trash" value="Eliminar" action="#{pedidosController.vaciarIngredientes()}" update="panelPla"/>
                     </p:column>
-                </p:dataTable>
+                </p:panelGrid>
                 <p:separator/>
-                <p:commandButton icon="ui-icon-plusthick" value="Realizar pedido"  action="#{pedidosController.realizarPedidoCliente()}"/>
+                <p:commandButton icon="ui-icon-arrowreturnthick-1-n" value="Realizar pedido"  action="#{pedidosController.realizarPedidoCliente()}"/>
             </ui:define>
-
         </ui:composition>
 
     </body>

@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Trabajadores</title>
+    </h:head>
+    <h:body>
+        <h1>Área Trabajadores</h1>
+        <h:form>
+            <p:messages autoUpdate="true" showDetail="true"/>
+            <h:panelGrid columns="2">
+                <p:outputLabel for="txtUsuario" value="usuario"/>
+                <p:inputText id="txtUsuario" value="#{loginController.trabajadores.usuario}" required="true"/>
+                
+                <p:outputLabel for="txtPassword" value="password"/>
+                <p:inputText id="txtPassword" value="#{loginController.trabajadores.pass}" required="true"/>
+                
+                <p:column/>
+                <p:commandButton icon="ui-icon-key" value="Iniciar Sesion" action="#{loginController.iniciarSesionTrabajador()}"/>
+            </h:panelGrid>
+        </h:form>
+        <p:separator/>
+        <h:form>
+            <p:column/>
+            <p:commandButton icon="ui-icon-key" value="Área Clientes" action="/faces/clientes/anonimo.xhtml?faces-redirect=true"/>
+        </h:form>
+    </h:body>
+</html>
+

@@ -71,9 +71,8 @@
                     </p:fieldset>
                     <p:commandButton icon="ui-icon-check" value="Registrar" update="pgDatos, pgCuenta" action="#{trabajadoresController.registrar()}"/>
                 </h:form>
-                <h:form>
-                    <p:commandButton value="Atras" action="../admin.xhtml?faces-redirect=true"/>
-                </h:form>
+                <p:separator/>
+                <p:button icon="ui-icon-arrowreturnthick-1-w" value="Retroceder" outcome="/trabajadores/admin.xhtml?faces-redirect=true"/>
             </ui:define>
 
         </ui:composition>

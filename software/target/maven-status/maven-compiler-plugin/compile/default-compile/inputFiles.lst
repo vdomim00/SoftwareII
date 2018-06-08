@@ -2,12 +2,14 @@ E:\Users\Adrian\Documents\GitHub\SoftwareII\software\src\main\java\com\mycompany
 E:\Users\Adrian\Documents\GitHub\SoftwareII\software\src\main\java\com\mycompany\software\ClientesController.java
 E:\Users\Adrian\Documents\GitHub\SoftwareII\software\src\main\java\com\mycompany\ejb\AbstractFacade.java
 E:\Users\Adrian\Documents\GitHub\SoftwareII\software\src\main\java\com\mycompany\model\DetallePedidosAProveedores.java
+E:\Users\Adrian\Documents\GitHub\SoftwareII\software\src\main\java\com\mycompany\ejb\DetallePedidosAProveedoresFacadeLocal.java
 E:\Users\Adrian\Documents\GitHub\SoftwareII\software\src\main\java\com\mycompany\ejb\AlmacenesFacadeLocal.java
 E:\Users\Adrian\Documents\GitHub\SoftwareII\software\src\main\java\com\mycompany\model\Almacenes.java
 E:\Users\Adrian\Documents\GitHub\SoftwareII\software\src\main\java\com\mycompany\software\PlantillaController.java
 E:\Users\Adrian\Documents\GitHub\SoftwareII\software\src\main\java\com\mycompany\ejb\PedidosAProveedoresFacade.java
 E:\Users\Adrian\Documents\GitHub\SoftwareII\software\src\main\java\com\mycompany\model\Proveedores.java
 E:\Users\Adrian\Documents\GitHub\SoftwareII\software\src\main\java\com\mycompany\ejb\ZonasFacadeLocal.java
+E:\Users\Adrian\Documents\GitHub\SoftwareII\software\src\main\java\com\mycompany\software\DetallePedidosAProveedoresController.java
 E:\Users\Adrian\Documents\GitHub\SoftwareII\software\src\main\java\com\mycompany\model\PlatosController.java
 E:\Users\Adrian\Documents\GitHub\SoftwareII\software\src\main\java\com\mycompany\ejb\PedidosAAlmacenFacade.java
 E:\Users\Adrian\Documents\GitHub\SoftwareII\software\src\main\java\com\mycompany\model\Secciones.java
@@ -16,6 +18,7 @@ E:\Users\Adrian\Documents\GitHub\SoftwareII\software\src\main\java\com\mycompany
 E:\Users\Adrian\Documents\GitHub\SoftwareII\software\src\main\java\com\mycompany\software\PedidosAProveedoresController.java
 E:\Users\Adrian\Documents\GitHub\SoftwareII\software\src\main\java\com\mycompany\ejb\SeccionesFacadeLocal.java
 E:\Users\Adrian\Documents\GitHub\SoftwareII\software\src\main\java\com\mycompany\model\Pedidos.java
+E:\Users\Adrian\Documents\GitHub\SoftwareII\software\src\main\java\com\mycompany\ejb\DetallePedidosAProveedoresFacade.java
 E:\Users\Adrian\Documents\GitHub\SoftwareII\software\src\main\java\com\mycompany\software\SeccionesController.java
 E:\Users\Adrian\Documents\GitHub\SoftwareII\software\src\main\java\com\mycompany\software\TrabajadoresController.java
 E:\Users\Adrian\Documents\GitHub\SoftwareII\software\src\main\java\com\mycompany\ejb\SeccionesFacade.java

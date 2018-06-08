@@ -45,12 +45,10 @@ public class Pedidos implements Serializable{
     
     @Column(name = "observaciones")
     private String observaciones;
-    
 
     @ManyToOne(cascade = CascadeType.REFRESH)
     @JoinColumn(referencedColumnName = "usuario", name = "clientes_usuario")
     private Clientes clientes = new Clientes();
-
     
     public Clientes getClientes() {
         return clientes;

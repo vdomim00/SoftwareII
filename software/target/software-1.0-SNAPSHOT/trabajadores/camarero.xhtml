@@ -9,14 +9,13 @@
 
         <ui:composition template="./../WEB-INF/templates/plantillaCamarero.xhtml">
             <ui:define name="content">
+                <h1> Acciones principales </h1>
                 <h:form>
-                        <p:panelMenu>
-
-                                <p:submenu label="Gestionar Pedidos">
-                                    <p:menuitem value="Ver Pedidos Clientes" icon="ui-icon-disk" action="./camarero/verPedidosCliente.xhtml?faces-redirect=true"/>
-                                </p:submenu>
-
-                        </p:panelMenu>
+                    <p:panelMenu>
+                        <p:submenu label="Gestionar Pedidos">
+                            <p:menuitem value="Ver Pedidos Clientes" icon="ui-icon-disk" action="./camarero/verPedidosCliente.xhtml?faces-redirect=true"/>
+                        </p:submenu>
+                    </p:panelMenu>
                 </h:form>
             </ui:define>
         </ui:composition>

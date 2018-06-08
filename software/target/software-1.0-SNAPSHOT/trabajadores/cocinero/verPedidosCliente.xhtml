@@ -21,28 +21,42 @@
                             <f:selectItems value="#{pedidosController.listaPedidosPendientes}"
                                            var="ped" itemValue="#{ped.idPedido}" itemLabel="#{ped.idPedido}"/>
                         </p:selectOneMenu>
-                        <p:commandButton icon="ui-icon-arrowrefresh-1-w" value="Cargar" actionListener="#{pedidosController.cargarPedido()}" update="tablaPedido"/>
+                        <p:commandButton icon="ui-icon-arrowrefresh-1-w" value="Cargar" actionListener="#{pedidosController.cargarPedido()}" update="panelPedidos"/>
                     </p:fieldset>
                     <p:separator/>
-                    <p:dataTable id="tablaPedido" emptyMessage="Selecciona un pedido en el apartado superior" value="#{pedidosController.pedidos}" var="pe">
-                        <p:column headerText="ID">
-                            <h:outputText value="#{pe.idPedido}" />
+                    <p:panelGrid id="panelPedidos" columns="4">
+                        <p:column>
+                            <p:dataTable id="tablaPedido" emptyMessage="Selecciona un pedido en el apartado superior" value="#{pedidosController.pedidos}" var="pe">
+                                <p:column headerText="ID">
+                                    <h:outputText value="#{pe.idPedido}" />
+                                </p:column>
+                            </p:dataTable>
+                        </p:column>
+
+                        <p:column>
+                            <p:dataTable id="tablaPlatosCli" emptyMessage="Selecciona un pedido en el apartado superior" value="#{pedidosController.listaPlatos}" var="lisPla">
+                                <p:column headerText="Platos">
+                                    <h:outputText value="#{lisPla}" />
+                                </p:column>
+                            </p:dataTable>
                         </p:column>
                         
-                        <p:column headerText="Platos">
-                            <h:outputText value="#{pe.nombrePlatos}" />
+                        <p:column>
+                            <p:dataTable id="tablaCantCli" emptyMessage="Selecciona un pedido en el apartado superior" value="#{pedidosController.listaCantidad}" var="lisCan">
+                                <p:column headerText="Cantidad">
+                                    <h:outputText value="#{lisCan}" />
+                                </p:column>
+                            </p:dataTable>
                         </p:column>
-
-                        <p:column headerText="Observaciones">
-                            <h:outputText value="#{pe.observaciones}" />
-                        </p:column>
-
+                        
                         <p:column headerText="Acción">
                             <p:commandButton icon="ui-icon-arrowreturnthick-1-n" value="Validar" action="#{pedidosController.validarPedidoPendiente()}"/>
                         </p:column>
-                    </p:dataTable>
+                    </p:panelGrid>
                     <p:separator/>
                     <p:commandButton icon="ui-icon-trash" value="Eliminar" action="#{pedidosController.eliminarPedido()}"/>
+                    <p:separator/>
+                    <p:button icon="ui-icon-arrowreturnthick-1-w" value="Retroceder" outcome="/trabajadores/cocinero.xhtml?faces-redirect=true"/>
                 </h:form>
             </ui:define>
 
